@@ -35,14 +35,41 @@ const translations = {
     
     // AI Roadmap Section
     'ai.roadmap.title': 'Lộ trình AI cho Thương mại điện tử',
-    'ai.roadmap.subtitle': 'Kế hoạch phát triển dài hạn',
+    'ai.roadmap.subtitle': 'Chi tiết theo tháng · 2026–2027',
     'ai.roadmap.phase1.year': '2026 – Nền tảng',
     'ai.roadmap.phase1.desc': 'Xây tool phân tích lợi nhuận và dashboard cơ bản.',
     'ai.roadmap.phase2.year': '2027–2028 – Phát triển',
     'ai.roadmap.phase2.desc': 'Tích hợp dự đoán tồn kho và AI gợi ý nhập hàng.',
     'ai.roadmap.phase3.year': '2029+ – Mở rộng',
     'ai.roadmap.phase3.desc': 'Phát triển AI Business Advisor theo mô hình SaaS.',
-    
+
+    // Timeline accordion – 2026
+    'ai.tl.26.t3.badge':  '● T3 · Hiện tại',
+    'ai.tl.26.t3.title':  'Meow — Zalo AI Bot v1.2',
+    'ai.tl.26.t3.desc':   'Gemini 2.5 Flash, streaming thời gian thực, 50+ tools, web dashboard quản lý, long-term memory và cloud backup tự động.',
+    'ai.tl.26.t45.title': 'Hoàn thiện Bot Demo · Test & tài liệu',
+    'ai.tl.26.t45.desc':  'Bổ sung test integration, chuẩn hóa codebase, tối ưu prompt persona, chuẩn bị cho user ngoài thử nghiệm.',
+    'ai.tl.26.t6.title':  'Tool phân tích lợi nhuận (phase 1)',
+    'ai.tl.26.t6.desc':   'Dashboard e-commerce cơ bản: nhập dữ liệu sản phẩm, tính lợi nhuận thực, visualize theo biểu đồ đơn giản.',
+    'ai.tl.26.t78.title': 'Module tồn kho & cảnh báo nhập hàng',
+    'ai.tl.26.t78.desc':  'AI dự báo ngưỡng tồn kho an toàn, tự động gợi ý số lượng và thời điểm nhập hàng phù hợp.',
+    'ai.tl.26.t910.title':'Tốt nghiệp BETU · Deploy thực tế',
+    'ai.tl.26.t910.desc': 'Hoàn thành chương trình học, thử nghiệm tool với vài cửa hàng nhỏ, thu thập feedback thực tế.',
+    'ai.tl.26.t1112.title':'Refactor · Chuẩn bị scale',
+    'ai.tl.26.t1112.desc': 'Tối ưu hiệu năng, tái cấu trúc monorepo, xây API layer cho tích hợp bên ngoài.',
+
+    // Timeline accordion – 2027
+    'ai.tl.27.t12.title': 'AI gợi ý nhập hàng từ lịch sử bán',
+    'ai.tl.27.t12.desc':  'Dùng dữ liệu lịch sử để train model dự đoán xu hướng theo mùa vụ, sự kiện và hành vi người mua.',
+    'ai.tl.27.t34.title': 'Tích hợp Shopify / WooCommerce API',
+    'ai.tl.27.t34.desc':  'Kết nối với nền tảng e-commerce, đồng bộ tự động đơn hàng, tồn kho và sản phẩm theo thời gian thực.',
+    'ai.tl.27.t56.title': 'Beta launch AI Business Advisor',
+    'ai.tl.27.t56.desc':  'Mở beta cho doanh nghiệp nhỏ, thu thập feedback, đo ROI thực tế và cải thiện liên tục.',
+    'ai.tl.27.t79.title': 'Mở rộng sang B2B nhỏ lẻ',
+    'ai.tl.27.t79.desc':  'Gói subscription, onboarding tự động, hỗ trợ khách hàng theo từng ngành hàng.',
+    'ai.tl.27.t1012.title':'V2.0 · AI Commerce Platform',
+    'ai.tl.27.t1012.desc': 'Nền tảng tổng hợp: lợi nhuận, tồn kho, dự báo xu hướng và AI advisor trong một sản phẩm SaaS.',
+
     // AI Product Concept Section
     'ai.concept.title': 'AI Business Tools (Concept)',
     'ai.concept.subtitle': 'Ý tưởng công cụ AI cho doanh nghiệp',
@@ -57,6 +84,24 @@ const translations = {
     'projects.case2.desc': 'Website đọc truyện online với giao diện thân thiện, tốc độ tải nhanh. Tích hợp quản lý nội dung và tìm kiếm thông minh.',
     'projects.empty.main': 'Chưa có dự án được thêm vào',
     'projects.empty.sub': 'Projects coming soon...',
+
+    // Featured projects (3 cái mới)
+    'projects.p1.desc': 'Trang bio/portfolio cá nhân dạng static website. Có sidebar điều hướng, hiệu ứng nền động, nhạc nền, custom cursor và hỗ trợ chuyển đổi ngôn ngữ VI/EN/ZH.',
+    'projects.p1.btn': 'Xem repo',
+    'projects.p2.desc': 'Chatbot AI đa năng cho Zalo. Gemini 2.5 Flash, streaming thời gian thực, 50+ tools qua 9 modules, long-term memory và web dashboard quản lý.',
+    'projects.p3.desc': 'Ứng dụng web PHP thuần cho cửa hàng truyện tranh trực tuyến. Catalogue sản phẩm, giỏ hàng, đặt hàng, dashboard admin/staff và thanh toán VietQR + SePay.',
+    'projects.p3.btn': 'Xem repo',
+    'projects.p4.desc': 'Công cụ Python dịch nhanh văn bản trên Windows. Chụp màn hình để trích xuất và dịch trực tiếp. Hỗ trợ Offline OCR (Tesseract) và Cloud OCR (Google Vision) độ chính xác cao.',
+    'projects.p4.btn': 'Xem repo',
+
+    // GitHub Profile Section
+    'github.title': '🐱 GitHub Profile',
+    'github.subtitle': 'Hồ sơ lập trình của tôi',
+    'github.nav': 'GitHub',
+    'github.stats.label': 'Thống kê GitHub',
+    'github.loading': 'Đang tải nội dung từ GitHub...',
+    'github.error': 'Không tải được README.',
+    'github.error.link': 'Xem trực tiếp trên GitHub →',
     
     // Links Section
     'links.title': 'Kết nối',
@@ -156,14 +201,41 @@ const translations = {
     
     // AI Roadmap Section
     'ai.roadmap.title': 'AI Roadmap for E-commerce',
-    'ai.roadmap.subtitle': 'Long-term development plan',
+    'ai.roadmap.subtitle': 'Monthly milestones · 2026–2027',
     'ai.roadmap.phase1.year': '2026 – Foundation',
     'ai.roadmap.phase1.desc': 'Build profit analysis tools and basic dashboard.',
     'ai.roadmap.phase2.year': '2027–2028 – Growth',
     'ai.roadmap.phase2.desc': 'Integrate inventory prediction and AI restock suggestions.',
     'ai.roadmap.phase3.year': '2029+ – Scale',
     'ai.roadmap.phase3.desc': 'Develop AI Business Advisor as SaaS platform.',
-    
+
+    // Timeline accordion – 2026
+    'ai.tl.26.t3.badge':  '● T3 · Current',
+    'ai.tl.26.t3.title':  'Meow — Zalo AI Bot v1.2',
+    'ai.tl.26.t3.desc':   'Gemini 2.5 Flash, real-time streaming, 50+ tools, management web dashboard, long-term memory and automatic cloud backup.',
+    'ai.tl.26.t45.title': 'Finalize Bot Demo · Testing & Docs',
+    'ai.tl.26.t45.desc':  'Add integration tests, standardize codebase, optimize prompt persona, prepare for external user trials.',
+    'ai.tl.26.t6.title':  'Profit Analysis Tool (Phase 1)',
+    'ai.tl.26.t6.desc':   'Basic e-commerce dashboard: input product data, calculate actual profit, visualize with simple charts.',
+    'ai.tl.26.t78.title': 'Inventory Module & Restock Alerts',
+    'ai.tl.26.t78.desc':  'AI predicts safe stock thresholds and automatically suggests restock quantities and optimal timing.',
+    'ai.tl.26.t910.title':'BETU Graduation · Real-world Deploy',
+    'ai.tl.26.t910.desc': 'Complete academic program, pilot the tool with small stores, collect real-world feedback.',
+    'ai.tl.26.t1112.title':'Refactor · Prepare to Scale',
+    'ai.tl.26.t1112.desc': 'Optimize performance, restructure as monorepo, build API layer for external integrations.',
+
+    // Timeline accordion – 2027
+    'ai.tl.27.t12.title': 'AI Restock Suggestions from Sales History',
+    'ai.tl.27.t12.desc':  'Use historical data to train a model predicting trends based on seasons, events and buyer behavior.',
+    'ai.tl.27.t34.title': 'Shopify / WooCommerce API Integration',
+    'ai.tl.27.t34.desc':  'Connect with e-commerce platforms to automatically sync orders, inventory and products in real time.',
+    'ai.tl.27.t56.title': 'Beta Launch: AI Business Advisor',
+    'ai.tl.27.t56.desc':  'Open beta for small businesses, collect feedback, measure real ROI and improve continuously.',
+    'ai.tl.27.t79.title': 'Expand to Small B2B',
+    'ai.tl.27.t79.desc':  'Build subscription tiers, automated onboarding, customer support per industry segment.',
+    'ai.tl.27.t1012.title':'V2.0 · Full AI Commerce Platform',
+    'ai.tl.27.t1012.desc': 'Integrated platform: profit analysis, inventory management, trend forecasting and AI advisor in one SaaS product.',
+
     // AI Product Concept Section
     'ai.concept.title': 'AI Business Tools (Concept)',
     'ai.concept.subtitle': 'AI tool concept for businesses',
@@ -178,6 +250,26 @@ const translations = {
     'projects.case2.desc': 'Online reading website with user-friendly interface and fast loading. Integrated content management and smart search.',
     'projects.empty.main': 'No projects added yet',
     'projects.empty.sub': 'Projects coming soon...',
+
+    // Featured projects
+    'projects.p1.desc': 'Personal bio/portfolio as a static website. Sidebar navigation, dynamic background effects, background music, custom cursor and multilingual support (VI/EN/ZH).',
+    'projects.p1.btn': 'View repo',
+    'projects.p2.desc': 'Versatile AI chatbot for Zalo. Gemini 2.5 Flash, real-time streaming, 50+ tools across 9 modules, long-term memory and management web dashboard.',
+    'projects.p2.btn': 'README',
+    'projects.p3.desc': 'Pure PHP web app for an online comic book store. Product catalogue, cart, ordering, admin/staff dashboard and VietQR + SePay payment.',
+    'projects.p3.btn': 'View repo',
+    'projects.p4.desc': 'Lightweight Python translation app for Windows. Capture screenshots to extract and translate text directly. Supports Offline OCR (Tesseract) and high-accuracy Cloud OCR (Google Vision).',
+    'projects.p4.btn': 'View repo',
+
+
+    // GitHub Profile Section
+    'github.title': '🐱 GitHub Profile',
+    'github.subtitle': 'My coding profile',
+    'github.nav': 'GitHub',
+    'github.stats.label': 'GitHub Stats',
+    'github.loading': 'Loading content from GitHub...',
+    'github.error': 'Could not load README.',
+    'github.error.link': 'View directly on GitHub →',
     
     // Links Section
     'links.title': 'Connect',
@@ -275,6 +367,15 @@ const translations = {
     'services.tiktok.title': 'TikTok视频剪辑',
     'services.tiktok.desc': '刚开始学习视频剪辑，已制作3个基础音乐视频。正在学习如何创建hook、时间掌揧和字幕。',
     
+    // GitHub Profile Section
+    'github.title': '🐱 GitHub 主页',
+    'github.subtitle': '我的编程主页',
+    'github.nav': 'GitHub',
+    'github.stats.label': 'GitHub 统计',
+    'github.loading': '正在从GitHub加载内容...',
+    'github.error': '无法加载README。',
+    'github.error.link': '直接在GitHub查看 →',
+    
     // Navigation
     'nav.home': '主页',
     'nav.about': '关于',
@@ -307,14 +408,41 @@ const translations = {
     
     // AI Roadmap Section
     'ai.roadmap.title': '电商AI发展路线',
-    'ai.roadmap.subtitle': '长期发展计划',
+    'ai.roadmap.subtitle': '按月详细计划 · 2026–2027',
     'ai.roadmap.phase1.year': '2026 – 基础阶段',
     'ai.roadmap.phase1.desc': '构建利润分析工具和基础仪表板。',
     'ai.roadmap.phase2.year': '2027–2028 – 成长阶段',
     'ai.roadmap.phase2.desc': '整合库存预测和AI补货建议。',
     'ai.roadmap.phase3.year': '2029+ – 扩展阶段',
     'ai.roadmap.phase3.desc': '开发AI商业顾问SaaS平台。',
-    
+
+    // Timeline accordion – 2026
+    'ai.tl.26.t3.badge':  '● T3 · 当前',
+    'ai.tl.26.t3.title':  'Meow — Zalo AI 机器人 v1.2',
+    'ai.tl.26.t3.desc':   'Gemini 2.5 Flash，实时流式响应，50+工具，Web管理仪表板，长期记忆和自动云备份。',
+    'ai.tl.26.t45.title': '完善Bot Demo · 测试与文档',
+    'ai.tl.26.t45.desc':  '添加集成测试，规范代码库，优化提示词人设，为外部用户试用做准备。',
+    'ai.tl.26.t6.title':  '利润分析工具（第一阶段）',
+    'ai.tl.26.t6.desc':   '基础电商仪表板：录入商品数据，计算实际利润，通过简单图表可视化呈现。',
+    'ai.tl.26.t78.title': '库存模块与补货提醒',
+    'ai.tl.26.t78.desc':  'AI预测安全库存阈値，自动建议补货数量和最佳时机。',
+    'ai.tl.26.t910.title':'BETU毕业（预计）· 实际部署',
+    'ai.tl.26.t910.desc': '完成学业，开始与小型店铺试用工具，收集真实反馈。',
+    'ai.tl.26.t1112.title':'重构 · 准备扩展',
+    'ai.tl.26.t1112.desc': '优化性能，改造为单体仓库结构，构建对外集成API层。',
+
+    // Timeline accordion – 2027
+    'ai.tl.27.t12.title': 'AI根据销售历史推荐补货',
+    'ai.tl.27.t12.desc':  '利用历史数据训练模型，预测基于季节、节日和买家行为的销售趋势。',
+    'ai.tl.27.t34.title': '接入Shopify / WooCommerce API',
+    'ai.tl.27.t34.desc':  '直连电商平台，自动同步订单、库存和商品数据。',
+    'ai.tl.27.t56.title': 'AI商业顾问 Beta上线',
+    'ai.tl.27.t56.desc':  '向小型企业开放测试，收集反馈，衡量实际ROI并持续迭代。',
+    'ai.tl.27.t79.title': '拓展至小型B2B',
+    'ai.tl.27.t79.desc':  '构建订阅套餐，自动化引导，按行业提供客户支持。',
+    'ai.tl.27.t1012.title':'V2.0 · 全功能AI商业平台',
+    'ai.tl.27.t1012.desc': '综合平台：利润分析、库存管理、趋势预测与AI顾问集成于一款SaaS产品。',
+
     // AI Product Concept Section
     'ai.concept.title': 'AI商业工具（概念）',
     'ai.concept.subtitle': '商业AI工具概念',
@@ -329,7 +457,17 @@ const translations = {
     'projects.case2.desc': '在线阅读网站，界面友好，加载快速。集成内容管理和智能搜索。',
     'projects.empty.main': '暂无项目',
     'projects.empty.sub': '即将推出...',
-    
+
+    // Featured projects
+    'projects.p1.desc': '个人简介/作品集静态网站。包括侧边栏导航、动态背景效果、背景音乐、自定义光标和多语言支持（VI/EN/ZH）。',
+    'projects.p1.btn': '查看仓库',
+    'projects.p2.desc': 'Zalo多功能AI聊天机器人。Gemini 2.5 Flash，实时流式响应，50+工具，9个模块，长期记忆和Web管理仪表板。',
+    'projects.p2.btn': 'README',
+    'projects.p3.desc': '纸本书店纯 PHP网页应用。商品目录、购物车、下单、管理员/员工仪表板及VietQR + SePay支付。',
+    'projects.p3.btn': '查看仓库',
+    'projects.p4.desc': 'Windows轻量级Python翻译工具。截图直接提取并翻译文本。支持离线OCR (Tesseract) 和高精度云端OCR (Google Vision)。',
+    'projects.p4.btn': '查看仓库',
+
     // Links Section
     'links.title': '联系方式',
     'links.subtitle': '在这些平台找到我',
@@ -592,6 +730,9 @@ function setLanguage(lang) {
   
   // Update HTML lang attribute
   document.documentElement.setAttribute('lang', lang);
+
+  // Notify GitHub README fetcher to reload in new language
+  document.dispatchEvent(new CustomEvent('language-changed', { detail: { lang } }));
 }
 
 // ============================================
