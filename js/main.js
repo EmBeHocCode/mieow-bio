@@ -93,6 +93,8 @@ const translations = {
     'projects.p3.btn': 'Xem repo',
     'projects.p4.desc': 'Công cụ Python dịch nhanh văn bản trên Windows. Chụp màn hình để trích xuất và dịch trực tiếp. Hỗ trợ Offline OCR (Tesseract) và Cloud OCR (Google Vision) độ chính xác cao.',
     'projects.p4.btn': 'Xem repo',
+    'projects.p5.desc': 'Nền tảng e-commerce với Next.js 14 App Router, TypeScript, Tailwind CSS, Prisma và PostgreSQL. Bao gồm User/Admin dashboard riêng biệt, tích hợp giỏ hàng và thanh toán.',
+    'projects.p5.btn': 'Xem repo',
 
     // GitHub Profile Section
     'github.title': '🐱 GitHub Profile',
@@ -260,6 +262,9 @@ const translations = {
     'projects.p3.btn': 'View repo',
     'projects.p4.desc': 'Lightweight Python translation app for Windows. Capture screenshots to extract and translate text directly. Supports Offline OCR (Tesseract) and high-accuracy Cloud OCR (Google Vision).',
     'projects.p4.btn': 'View repo',
+    'projects.p5.desc': 'E-commerce platform built with Next.js 14 App Router, TypeScript, Tailwind CSS, Prisma, and PostgreSQL. Features separate User/Admin dashboards, cart, and payment integration.',
+    'projects.p5.btn': 'View repo',
+
 
 
     // GitHub Profile Section
@@ -467,6 +472,9 @@ const translations = {
     'projects.p3.btn': '查看仓库',
     'projects.p4.desc': 'Windows轻量级Python翻译工具。截图直接提取并翻译文本。支持离线OCR (Tesseract) 和高精度云端OCR (Google Vision)。',
     'projects.p4.btn': '查看仓库',
+    'projects.p5.desc': '基于Next.js 14 App Router、TypeScript、Tailwind CSS、Prisma和PostgreSQL的电商平台。包含独立的用户/后台管理仪表板、购物车及支付集成。',
+    'projects.p5.btn': '查看仓库',
+
 
     // Links Section
     'links.title': '联系方式',
