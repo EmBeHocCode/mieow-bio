@@ -1,0 +1,447 @@
+/* ============================================
+   SETTINGS.CSS - Settings Modal Styles
+   ============================================
+   - Settings Groups
+   - Language Buttons
+   - Toggle Switches
+   - Settings Footer
+   ============================================ */
+
+/* ============================================
+   Settings Modal Overrides
+   ============================================ */
+.modal--settings .modal__content {
+  max-width: 600px;
+  padding: 2.5rem;
+}
+
+.modal--settings .modal__title {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #ff3d8a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 2rem;
+}
+
+/* ============================================
+   Settings Groups
+   ============================================ */
+.settings-group {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--color-border);
+  animation: slideInUp 0.3s ease-out;
+}
+
+.settings-group:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.settings-group__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.settings-group__title::before {
+  content: '';
+  width: 4px;
+  height: 1.25rem;
+  background: linear-gradient(180deg, var(--color-accent), #ff3d8a);
+  border-radius: 2px;
+}
+
+/* ============================================
+   Language Buttons
+   ============================================ */
+.language-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1rem;
+  background: var(--color-bg-secondary);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  line-height: 1.2;
+}
+
+.lang-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 0, 110, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.lang-btn:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(255, 0, 110, 0.2);
+}
+
+.lang-btn:hover::before {
+  left: 100%;
+}
+
+.lang-btn:active {
+  transform: translateY(0);
+}
+
+.lang-btn.active {
+  background: linear-gradient(135deg, var(--color-accent), #ff3d8a);
+  border-color: var(--color-accent);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(255, 0, 110, 0.4);
+}
+
+.lang-btn .flag {
+  font-size: 1.5em;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================
+   Toggle Switch Component
+   ============================================ */
+.toggle-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-bg-secondary);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+}
+
+.toggle-option:hover {
+  border-color: var(--color-accent);
+  background: rgba(255, 0, 110, 0.05);
+}
+
+.toggle-option span {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+/* Toggle Switch */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-bg-secondary);
+  border: 2px solid var(--color-border);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 28px;
+}
+
+.toggle__slider::before {
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background: linear-gradient(135deg, #fff, #f0f0f0);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle input:checked + .toggle__slider {
+  background: linear-gradient(135deg, var(--color-accent), #ff3d8a);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 12px rgba(255, 0, 110, 0.4);
+}
+
+.toggle input:checked + .toggle__slider::before {
+  transform: translateX(24px);
+  background: linear-gradient(135deg, #fff, #fff);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.toggle:hover .toggle__slider {
+  border-color: var(--color-accent);
+}
+
+/* ============================================
+   Settings Footer
+   ============================================ */
+.settings-footer {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--color-border);
+  text-align: center;
+}
+
+.settings-footer p {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.settings-footer p::before {
+  content: '✓';
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 768px) {
+  .modal--settings .modal__content {
+    max-width: 95vw;
+    padding: 1.75rem 1.25rem;
+    margin: 1rem;
+  }
+  
+  .modal--settings .modal__title {
+    font-size: 1.65rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .settings-group {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.25rem;
+  }
+  
+  .settings-group__title {
+    font-size: 1.1rem;
+  }
+  
+  .language-options {
+    gap: 0.6rem;
+  }
+  
+  .lang-btn {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.875rem;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  
+  .lang-btn .flag {
+    font-size: 1.75em;
+  }
+  
+  .toggle-option {
+    padding: 0.65rem 0.875rem;
+  }
+  
+  .toggle-option span {
+    font-size: 0.95rem;
+  }
+  
+  .toggle {
+    width: 48px;
+    height: 26px;
+  }
+  
+  .toggle__slider::before {
+    height: 18px;
+    width: 18px;
+  }
+  
+  .toggle input:checked + .toggle__slider::before {
+    transform: translateX(22px);
+  }
+}
+
+@media (max-width: 480px) {
+  .modal--settings .modal__content {
+    padding: 1rem 0.75rem;
+    margin: 0.25rem;
+    width: calc(100vw - 0.5rem);
+  }
+  
+  .modal--settings .modal__title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .settings-group {
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+  }
+  
+  .settings-group__title {
+    font-size: 1rem;
+  }
+  
+  .language-options {
+    gap: 0.5rem;
+  }
+  
+  .lang-btn {
+    padding: 0.65rem 0.35rem;
+    font-size: 0.8rem;
+  }
+  
+  .lang-btn .flag {
+    font-size: 1.6em;
+  }
+  
+  .toggle-option {
+    padding: 0.6rem 0.75rem;
+    gap: 0.75rem;
+  }
+  
+  .toggle-option span {
+    font-size: 0.875rem;
+  }
+  
+  .toggle {
+    width: 44px;
+    height: 24px;
+  }
+  
+  .toggle__slider {
+    border-width: 1.5px;
+  }
+  
+  .toggle__slider::before {
+    height: 16px;
+    width: 16px;
+    left: 1.5px;
+    bottom: 1.5px;
+  }
+  
+  .toggle input:checked + .toggle__slider::before {
+    transform: translateX(20px);
+  }
+  
+  .settings-footer {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+  }
+  
+  .settings-footer p {
+    font-size: 0.8rem;
+  }
+}
+
+/* ============================================
+   Dark Mode Adjustments
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  .lang-btn {
+    background: rgba(255, 255, 255, 0.05);
+  }
+  
+  .lang-btn:hover {
+    background: rgba(255, 0, 110, 0.1);
+  }
+  
+  .toggle-option {
+    background: rgba(255, 255, 255, 0.03);
+  }
+  
+  .toggle__slider {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* ============================================
+   Accessibility Improvements
+   ============================================ */
+.lang-btn:focus,
+.toggle:focus-within .toggle__slider {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.lang-btn:focus:not(:focus-visible),
+.toggle:focus-within:not(:focus-visible) .toggle__slider {
+  outline: none;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .settings-group,
+  .lang-btn,
+  .lang-btn::before,
+  .toggle__slider,
+  .toggle__slider::before {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+@media print {
+  .modal--settings .modal__content {
+    max-width: 100%;
+    border: 1px solid #000;
+  }
+  
+  .lang-btn,
+  .toggle-option {
+    border: 1px solid #000;
+  }
+}

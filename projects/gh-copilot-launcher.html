@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EmBeby-Mieow-DEV - GitHub Copilot CLI Launcher">
+  <meta name="author" content="EmBeby">
+  <meta name="theme-color" content="#0a0a0a">
+  
+  <title>GitHub Copilot CLI Launcher | EmBeby-Developer</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/gif" href="../assets/img/mieow.gif">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/base.css?v=10.0">
+  <link rel="stylesheet" href="../css/layout.css?v=11.0">
+  <link rel="stylesheet" href="../css/components.css?v=10.0">
+  <link rel="stylesheet" href="../css/background.css?v=9.0">
+  <link rel="stylesheet" href="../css/modal.css?v=10.0">
+  <link rel="stylesheet" href="../css/settings.css?v=13.0">
+  <link rel="stylesheet" href="../css/cursor.css?v=9.0">
+  <link rel="stylesheet" href="../css/menu-toggle.css?v=11.0">
+  <link rel="stylesheet" href="../css/scroll-animations.css?v=11.0">
+  <link rel="stylesheet" href="../css/project-page.css?v=1.0">
+</head>
+<body class="site">
+  <!-- Menu Toggle Button -->
+  <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+    <div class="menu-toggle__icon">
+      <span class="menu-toggle__bar"></span>
+      <span class="menu-toggle__bar"></span>
+      <span class="menu-toggle__bar"></span>
+    </div>
+  </button>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__header">
+      <div class="sidebar__avatar">
+        <img src="../assets/img/mieow.gif" alt="Avatar" class="sidebar__avatar-img">
+      </div>
+      <button class="sidebar__close" id="sidebar-close" aria-label="Close sidebar">
+        <div class="menu-toggle__icon">
+          <span class="menu-toggle__bar"></span>
+          <span class="menu-toggle__bar"></span>
+          <span class="menu-toggle__bar"></span>
+        </div>
+      </button>
+    </div>
+
+    <nav class="sidebar__nav">
+      <a href="../index.html#hero" class="sidebar__nav-link">
+        <i class="fas fa-home sidebar__nav-icon"></i>
+        <span>Home</span>
+      </a>
+      <a href="../index.html#about" class="sidebar__nav-link">
+        <i class="fas fa-user sidebar__nav-icon"></i>
+        <span>About</span>
+      </a>
+      <a href="../index.html#projects" class="sidebar__nav-link">
+        <i class="fas fa-folder sidebar__nav-icon"></i>
+        <span>Projects</span>
+      </a>
+      <a href="../index.html#links" class="sidebar__nav-link">
+        <i class="fas fa-link sidebar__nav-icon"></i>
+        <span>Links</span>
+      </a>
+      <a href="../index.html#contact" class="sidebar__nav-link">
+        <i class="fas fa-envelope sidebar__nav-icon"></i>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+    <div class="sidebar__footer">
+      <button class="sidebar__settings-btn" id="open-settings" aria-label="Open settings">
+        <i class="fas fa-cog"></i>
+        <span>Settings</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+  
+  <!-- Animated Background -->
+  <div class="particles-background">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    
+    <div class="neon-line"></div>
+    <div class="neon-line"></div>
+    
+    <div class="floating-orb"></div>
+    <div class="floating-orb"></div>
+    <div class="floating-orb"></div>
+  </div>
+  
+  <!-- Main Content -->
+  <main class="site-content">
+    
+    <!-- Project Header -->
+    <section class="section section--hero" id="hero">
+      <div class="container">
+        <div class="hero" style="text-align: left;">
+          <a href="../index.html#projects" class="btn btn--secondary" style="margin-bottom: 2rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <i class="fas fa-arrow-left"></i>
+            <span>Quay lại Projects</span>
+          </a>
+          
+          <div class="hero__content">
+            <h1 class="hero__title">
+              <i class="fas fa-robot"></i> <span class="text-accent">GitHub Copilot CLI Launcher</span>
+            </h1>
+            <p class="hero__tagline">
+              Giao diện đồ họa để dùng GitHub Copilot CLI dễ dàng hơn cho người mới
+            </p>
+            
+            <div class="hero__cta" style="margin-top: 2rem;">
+              <a href="https://www.mediafire.com/file/kx4z14cr1m4m38i/EmBeby-Mieow-DEV.exe/file" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-download"></i>
+                <span>Tải xuống v1.0</span>
+              </a>
+              <a href="https://github.com/EmBeHocCode" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+                <span>View on GitHub</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Project Description -->
+    <section class="section section--about" id="description">
+      <div class="container">
+        <div class="about">
+          <div class="section__header">
+            <h2 class="section__title">Giới thiệu</h2>
+          </div>
+          
+          <p class="about__text">
+            <i class="fas fa-lightbulb"></i> <strong>EmBeby-Mieow-DEV</strong> là công cụ launcher giúp bạn sử dụng GitHub Copilot CLI một cách trực quan thông qua giao diện đồ họa thay vì chỉ dùng command line.
+          </p>
+          
+          <p class="about__text">
+            <i class="fas fa-code"></i> Tool này được build bằng <strong>C# WPF</strong>, hỗ trợ Windows 10/11, giúp người mới bắt đầu dễ tiếp cận AI coding assistant mà không cần nhớ command phức tạp.
+          </p>
+          
+          <p class="about__text" style="background: rgba(255, 193, 7, 0.1); padding: 1rem; border-left: 4px solid #ffc107; border-radius: 4px;">
+            <i class="fas fa-exclamation-triangle" style="color: #ffc107;"></i> <strong>Lưu ý:</strong> Tool hiện đang trong giai đoạn phát triển và chưa hoàn thiện. Một số tính năng có thể chưa ổn định hoặc đang được cải thiện. Vui lòng feedback nếu gặp lỗi!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section class="section section--services" id="requirements">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Yêu cầu hệ thống</h2>
+          <p class="section__subtitle">Bạn cần chuẩn bị những gì trước khi dùng</p>
+        </div>
+        
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-card__icon">
+              <i class="fab fa-windows"></i>
+            </div>
+            <h3 class="service-card__title">
+              <i class="fas fa-desktop"></i> Windows 10/11
+            </h3>
+            <p class="service-card__desc">
+              Hệ điều hành Windows 10 hoặc Windows 11 với kết nối Internet ổn định.
+            </p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-card__icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <h3 class="service-card__title">
+              <i class="fas fa-user-check"></i> Tài khoản GitHub
+            </h3>
+            <p class="service-card__desc">
+              Tài khoản GitHub có quyền sử dụng GitHub Copilot (subscription hoặc free trial).
+            </p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-card__icon">
+              <i class="fas fa-terminal"></i>
+            </div>
+            <h3 class="service-card__title">
+              <i class="fas fa-download"></i> GitHub CLI
+            </h3>
+            <p class="service-card__desc">
+              Cài đặt GitHub CLI từ <a href="https://cli.github.com/" target="_blank" style="color: var(--color-accent);">cli.github.com</a> và đăng nhập tài khoản.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Setup Guide -->
+    <section class="section section--about" id="setup">
+      <div class="container">
+        <div class="about">
+          <div class="section__header">
+            <h2 class="section__title">Hướng dẫn cài đặt nhanh</h2>
+          </div>
+
+          <h3 style="color: var(--color-accent); margin-top: 2rem; margin-bottom: 1rem;">
+            <i class="fas fa-cog"></i> Bước 1: Cài GitHub CLI
+          </h3>
+          <p class="about__text">
+            1. Mở link chính thức: <a href="https://cli.github.com/" target="_blank" style="color: var(--color-accent);">https://cli.github.com/</a><br>
+            2. Tải bản cài đặt Windows và cài xong.<br>
+            3. Mở PowerShell mới, chạy:
+          </p>
+          <pre style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; margin: 1rem 0; overflow-x: auto;"><code>gh --version</code></pre>
+
+          <h3 style="color: var(--color-accent); margin-top: 2rem; margin-bottom: 1rem;">
+            <i class="fas fa-sign-in-alt"></i> Bước 2: Đăng nhập GitHub
+          </h3>
+          <p class="about__text">
+            Chạy lệnh sau và làm theo hướng dẫn:
+          </p>
+          <pre style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; margin: 1rem 0; overflow-x: auto;"><code>gh auth login</code></pre>
+          <p class="about__text">
+            Chọn: <strong>GitHub.com</strong> → <strong>HTTPS</strong> → <strong>Login with a web browser</strong>
+          </p>
+
+          <h3 style="color: var(--color-accent); margin-top: 2rem; margin-bottom: 1rem;">
+            <i class="fas fa-puzzle-piece"></i> Bước 3: Cài extension Copilot
+          </h3>
+          <p class="about__text">
+            Kiểm tra xem có extension chưa:
+          </p>
+          <pre style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; margin: 1rem 0; overflow-x: auto;"><code>gh copilot --help</code></pre>
+          <p class="about__text">
+            Nếu báo lỗi "không tìm thấy lệnh copilot", cài thêm:
+          </p>
+          <pre style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; margin: 1rem 0; overflow-x: auto;"><code>gh extension install github/gh-copilot</code></pre>
+
+          <h3 style="color: var(--color-accent); margin-top: 2rem; margin-bottom: 1rem;">
+            <i class="fas fa-rocket"></i> Bước 4: Chạy launcher
+          </h3>
+          <p class="about__text">
+            1. Mở file <strong>EmBeby-Mieow-DEV.exe</strong><br>
+            2. Màn hình <strong>Setup Data Folder</strong> sẽ hiện ra<br>
+            3. Chọn nơi lưu data (settings/logs/chat transcripts)<br>
+            <br>
+            <strong>Lưu ý:</strong> Đường dẫn phải có <code>ChatCLI</code>. Nếu bạn nhập <code>D:\</code>, tool sẽ tự thêm thành <code>D:\ChatCLI</code>.
+          </p>
+
+          <h3 style="color: var(--color-accent); margin-top: 2rem; margin-bottom: 1rem;">
+            <i class="fas fa-play"></i> Bước 5: Sử dụng
+          </h3>
+          <p class="about__text">
+            1. Ở <strong>Project folder</strong> bấm <strong>Browse</strong> và chọn thư mục code<br>
+            2. Dùng các nút:<br>
+            - <strong>Open Copilot CLI</strong><br>
+            - <strong>Run /create feature</strong><br>
+            - <strong>Run /fix bug</strong><br>
+            - <strong>Run /refactor code</strong><br>
+            - <strong>Change Data...</strong> (đổi lại nơi lưu data)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section section--services" id="features">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Tính năng chính</h2>
+          <p class="section__subtitle">Những gì tool này làm được</p>
+        </div>
+        
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-card__icon">
+              <i class="fas fa-mouse-pointer"></i>
+            </div>
+            <h3 class="service-card__title">
+              <i class="fas fa-window-maximize"></i> Giao diện đồ họa
+            </h3>
+            <p class="service-card__desc">
+              Không cần gõ command, chỉ cần click chuột để mở Copilot CLI và thực hiện các tác vụ phổ biến.
+            </p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-card__icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3 class="service-card__title">
+              <i class="fas fa-magic"></i> Quick Prompts
+            </h3>
+            <p class="service-card__desc">
+              Các nút nhanh cho /create, /fix, /refactor giúp tiết kiệm thời gian gõ lệnh và nhớ cú pháp.
+            </p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-card__icon">
+              <i class="fas fa-folder-open"></i>
+            </div>
+            <h3 class="service-card__title">
+              <i class="fas fa-code-branch"></i> Quản lý Project
+            </h3>
+            <p class="service-card__desc">
+              Browse và chọn project folder dễ dàng, tool tự động lưu lại path để lần sau không cần chọn lại.
+            </p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-card__icon">
+              <i class="fas fa-history"></i>
+            </div>
+            <h3 class="service-card__title">
+              <i class="fas fa-file-alt"></i> Chat Logs
+            </h3>
+            <p class="service-card__desc">
+              Tự động lưu chat transcript vào <code>&lt;DataRootPath&gt;\chat-logs\</code> với tên file theo thời gian.
+            </p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-card__icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3 class="service-card__title">
+              <i class="fas fa-cog"></i> Data Management
+            </h3>
+            <p class="service-card__desc">
+              Cho phép thay đổi data folder bất cứ lúc nào qua nút "Change Data..." trong giao diện chính.
+            </p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-card__icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 class="service-card__title">
+              <i class="fas fa-check-circle"></i> Path Validation
+            </h3>
+            <p class="service-card__desc">
+              Kiểm tra và tự động thêm "ChatCLI" vào path nếu thiếu, đảm bảo cấu trúc folder đúng chuẩn.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Troubleshooting -->
+    <section class="section section--about" id="troubleshooting">
+      <div class="container">
+        <div class="about">
+          <div class="section__header">
+            <h2 class="section__title">Lỗi thường gặp và cách xử lý</h2>
+          </div>
+
+          <h3 style="color: var(--color-accent); margin-top: 2rem; margin-bottom: 1rem;">
+            <i class="fas fa-exclamation-triangle"></i> "gh was not found"
+          </h3>
+          <p class="about__text">
+            - Cài lại GitHub CLI từ <a href="https://cli.github.com/" target="_blank" style="color: var(--color-accent);">https://cli.github.com/</a><br>
+            - Mở lại terminal mới rồi kiểm tra <code>gh --version</code>
+          </p>
+
+          <h3 style="color: var(--color-accent); margin-top: 2rem; margin-bottom: 1rem;">
+            <i class="fas fa-file-alt"></i> "prompt file not found"
+          </h3>
+          <p class="about__text">
+            - Bạn đang chọn sai Project folder<br>
+            - Repo cần có <code>.github/prompts/...</code> để dùng 3 nút quick prompt
+          </p>
+
+          <h3 style="color: var(--color-accent); margin-top: 2rem; margin-bottom: 1rem;">
+            <i class="fas fa-folder"></i> Không tạo được data folder
+          </h3>
+          <p class="about__text">
+            - Bấm "Change Data..."<br>
+            - Thử path đơn giản: <code>D:\ChatCLI\EmBeby-Mieow-DEV\data</code>
+          </p>
+
+          <h3 style="color: var(--color-accent); margin-top: 2rem; margin-bottom: 1rem;">
+            <i class="fas fa-comment-slash"></i> Tool mở nhưng không chat được
+          </h3>
+          <p class="about__text">
+            - Kiểm tra <code>gh auth status</code><br>
+            - Kiểm tra quyền Copilot trên account GitHub của bạn
+          </p>
+
+          <h3 style="color: var(--color-accent); margin-top: 2rem; margin-bottom: 1rem;">
+            <i class="fas fa-puzzle-piece"></i> Thiếu .NET runtime
+          </h3>
+          <p class="about__text">
+            Launcher build theo kiểu <code>self-contained false</code>, máy người dùng cần runtime phù hợp.<br>
+            Tải tại: <a href="https://dotnet.microsoft.com/en-us/download/dotnet" target="_blank" style="color: var(--color-accent);">https://dotnet.microsoft.com/en-us/download/dotnet</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Summary -->
+    <section class="section section--cta" id="summary">
+      <div class="container">
+        <div class="cta-box">
+          <h2 class="cta-box__title">
+            <span>Setup nhanh trong 5 bước</span> <i class="fas fa-rocket"></i>
+          </h2>
+          <div style="text-align: left; max-width: 600px; margin: 2rem auto;">
+            <p style="margin: 0.5rem 0;"><strong>1)</strong> Cài GitHub CLI: <a href="https://cli.github.com/" target="_blank" style="color: var(--color-accent);">https://cli.github.com/</a></p>
+            <p style="margin: 0.5rem 0;"><strong>2)</strong> Đăng nhập: <code>gh auth login</code></p>
+            <p style="margin: 0.5rem 0;"><strong>3)</strong> Chạy file <strong>EmBeby-Mieow-DEV.exe</strong></p>
+            <p style="margin: 0.5rem 0;"><strong>4)</strong> Chọn data folder (tool tự thêm ChatCLI nếu thiếu)</p>
+            <p style="margin: 0.5rem 0;"><strong>5)</strong> Chọn repo và bấm <strong>Open Copilot CLI</strong></p>
+          </div>
+          <div class="cta-box__actions">
+            <a href="https://www.mediafire.com/file/kx4z14cr1m4m38i/EmBeby-Mieow-DEV.exe/file" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-download"></i>
+              <span>Tải xuống ngay</span>
+            </a>
+            <a href="../index.html#contact" class="btn btn--primary btn--lg">
+              <i class="fas fa-question-circle"></i>
+              <span>Cần hỗ trợ?</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+  
+  <!-- Footer -->
+  <footer class="section section--footer" id="footer">
+    <div class="container">
+      <div class="footer">
+        <p class="footer__text">
+          <i class="fas fa-sparkles"></i> Được tạo ra với đam mê và code • © 2026 EmBeby-Dev
+        </p>
+        <p class="footer__text" style="margin-top: var(--space-xs);">
+          <em>"Code is poetry, design is art, together they create magic."</em>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Settings Modal -->
+  <div class="modal modal--settings" id="settings-modal">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title">Settings</h2>
+        <button class="modal__close" id="close-settings" aria-label="Close settings">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <div class="settings-group">
+          <h3 class="settings-group__title">Theme</h3>
+          <div class="toggle-option">
+            <label class="toggle">
+              <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
+              <span class="toggle__slider"></span>
+            </label>
+            <span>Dark Mode</span>
+          </div>
+        </div>
+
+        <div class="settings-group">
+          <h3 class="settings-group__title">Custom Cursor</h3>
+          <div class="toggle-option">
+            <label class="toggle">
+              <input type="checkbox" id="cursor-toggle" checked aria-label="Toggle custom cursor">
+              <span class="toggle__slider"></span>
+            </label>
+            <span>Enable Custom Cursor</span>
+          </div>
+        </div>
+
+        <div class="settings-group">
+          <h3 class="settings-group__title">Background Effects</h3>
+          <div class="toggle-option">
+            <label class="toggle">
+              <input type="checkbox" id="effects-toggle" checked aria-label="Toggle background effects">
+              <span class="toggle__slider"></span>
+            </label>
+            <span>Enable Particles</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal__footer settings-footer">
+        <p>Settings are saved automatically</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- JavaScript -->
+  <script src="../js/main.js?v=10.1" defer></script>
+  <script>
+    document.dispatchEvent(new Event('partials-loaded'));
+  </script>
+  <script src="../scripts/core/state.js"></script>
+  <script src="../scripts/features/sidebar.js?v=1.3"></script>
+  <script src="../scripts/features/settings.js?v=1.1"></script>
+  <script src="../scripts/features/scrollAnimations.js"></script>
+</body>
+</html>

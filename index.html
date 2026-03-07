@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal bio website - A modern, professional personal brand page">
+  <meta name="author" content="Your Name">
+  <meta name="theme-color" content="#0a0a0a">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com/">
+  <meta property="og:title" content="Your Name - Personal Bio">
+  <meta property="og:description" content="Welcome to my personal space on the web">
+  <meta property="og:image" content="https://yourwebsite.com/assets/og-image.jpg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yourwebsite.com/">
+  <meta property="twitter:title" content="Your Name - Personal Bio">
+  <meta property="twitter:description" content="Welcome to my personal space on the web">
+  <meta property="twitter:image" content="https://yourwebsite.com/assets/og-image.jpg">
+  
+  <title>EmBeby-Developer | IT & E-commerce</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/gif" href="assets/img/mieow.gif">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/base.css?v=10.0">
+  <link rel="stylesheet" href="css/layout.css?v=11.0">
+  <link rel="stylesheet" href="css/components.css?v=10.0">
+  <link rel="stylesheet" href="css/background.css?v=9.0">
+  <link rel="stylesheet" href="css/modal.css?v=10.0">
+  <link rel="stylesheet" href="css/settings.css?v=13.0">
+  <link rel="stylesheet" href="css/cursor.css?v=9.0">
+  <link rel="stylesheet" href="css/menu-toggle.css?v=11.0">
+  <link rel="stylesheet" href="css/scroll-animations.css?v=11.0">
+</head>
+<body class="site">
+  <!-- Menu Toggle Button -->
+  <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+    <div class="menu-toggle__icon">
+      <span class="menu-toggle__bar"></span>
+      <span class="menu-toggle__bar"></span>
+      <span class="menu-toggle__bar"></span>
+    </div>
+  </button>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__header">
+      <div class="sidebar__avatar">
+        <img src="assets/img/mieow.gif" alt="Avatar" class="sidebar__avatar-img">
+      </div>
+      <button class="sidebar__close" id="sidebar-close" aria-label="Close sidebar">
+        <div class="menu-toggle__icon">
+          <span class="menu-toggle__bar"></span>
+          <span class="menu-toggle__bar"></span>
+          <span class="menu-toggle__bar"></span>
+        </div>
+      </button>
+    </div>
+
+    <nav class="sidebar__nav">
+      <a href="#hero" class="sidebar__nav-link" data-page="home">
+        <i class="fas fa-home sidebar__nav-icon"></i>
+        <span data-i18n="nav.home">Home</span>
+      </a>
+      <a href="#about" class="sidebar__nav-link" data-page="about">
+        <i class="fas fa-user sidebar__nav-icon"></i>
+        <span data-i18n="nav.about">About</span>
+      </a>
+      <a href="#projects" class="sidebar__nav-link" data-page="projects">
+        <i class="fas fa-folder sidebar__nav-icon"></i>
+        <span data-i18n="nav.projects">Projects</span>
+      </a>
+      <a href="#ai-roadmap" class="sidebar__nav-link" data-page="ai-roadmap">
+        <i class="fas fa-brain sidebar__nav-icon"></i>
+        <span data-i18n="nav.ai">AI Vision</span>
+      </a>
+      <a href="#links" class="sidebar__nav-link" data-page="links">
+        <i class="fas fa-link sidebar__nav-icon"></i>
+        <span data-i18n="nav.links">Links</span>
+      </a>
+      <a href="#contact" class="sidebar__nav-link" data-page="contact">
+        <i class="fas fa-envelope sidebar__nav-icon"></i>
+        <span data-i18n="nav.contact">Contact</span>
+      </a>
+    </nav>
+
+    <div class="sidebar__footer">
+      <button class="sidebar__settings-btn" id="open-settings" aria-label="Open settings">
+        <i class="fas fa-cog"></i>
+        <span data-i18n="nav.settings">Settings</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Sidebar Overlay (for mobile) -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+  
+  <!-- Animated Background -->
+  <div class="particles-background">
+    <!-- Particles -->
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    
+    <!-- Neon scanning lines -->
+    <div class="neon-line"></div>
+    <div class="neon-line"></div>
+    
+    <!-- Floating orbs -->
+    <div class="floating-orb"></div>
+    <div class="floating-orb"></div>
+    <div class="floating-orb"></div>
+  </div>
+  
+  <!-- Control Panel -->
+  <div class="control-panel">
+    <!-- Theme Toggle -->
+    <!-- <button id="theme-toggle" class="control-btn" aria-label="Toggle theme">
+      <i class="fas fa-moon"></i>
+    </button> -->
+    
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+      <button id="lang-toggle" class="control-btn" aria-label="Change language">
+        <i class="fas fa-language"></i>
+        <span id="current-lang">VI</span>
+      </button>
+      <div class="language-menu" id="lang-menu">
+        <button class="lang-option" data-lang="vi">
+          <span class="flag">🇻🇳</span> Tiếng Việt
+        </button>
+        <button class="lang-option" data-lang="en">
+          <span class="flag">🇬🇧</span> English
+        </button>
+        <button class="lang-option" data-lang="zh">
+          <span class="flag">🇨🇳</span> 中文
+        </button>
+      </div>
+    </div>
+    
+    <!-- Music Toggle -->
+    <button id="music-toggle" class="control-btn" aria-label="Toggle music">
+      <i class="fas fa-music"></i>
+    </button>
+  </div>
+  
+  <!-- Background Music -->
+  <audio id="bg-music" loop>
+    <source src="assets/music/music.MP3" type="audio/mpeg">
+  </audio>
+  
+  <!-- Main Content -->
+  <main class="site-content">
+    
+    <!-- ====================================
+         Hero Section
+         ==================================== -->
+    <section class="section section--hero" id="hero">
+      <div class="container">
+        <div class="hero">
+          <!-- Avatar -->
+          <div class="avatar avatar--xl">
+            <!-- Avatar image -->
+            <img src="assets/img/mieow.gif" alt="Your Name" class="avatar__image">
+          </div>
+          
+          <!-- Hero Content -->
+          <div class="hero__content">
+            <h1 class="hero__title">
+              <span class="text-accent">EmBeby</span> – <span data-i18n="hero.title">Code & Create</span> <i class="fas fa-laptop-code"></i><i class="fas fa-sparkles"></i>
+            </h1>
+            <p class="hero__tagline" data-i18n="hero.tagline">
+              Tên thật: Nguyễn Lâm Hùng, hiện là sinh viên IT đang học code, làm web, tools, và tập edit video TikTok.
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="hero__cta">
+              <a href="mailto:mieowshopsite@gmail.com" class="btn btn--primary">
+                <i class="fas fa-briefcase"></i>
+                <span data-i18n="hero.cta1">Nhận dự án</span>
+              </a>
+              <a href="#projects" class="btn btn--secondary">
+                <i class="fas fa-code"></i>
+                <span data-i18n="hero.cta2">Xem projects</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ====================================
+         About Section
+         ==================================== -->
+    <section class="section section--about" id="about">
+      <div class="container">
+        <div class="about">
+          <div class="section__header">
+            <h2 class="section__title" data-i18n="about.title">Về tôi</h2>
+          </div>
+          <div class="about__intro">
+            <p class="about__name"><i class="far fa-user"></i> <span data-i18n="about.name">Nguyễn Lâm Hùng</span></p>
+            <p class="about__school"><i class="far fa-building"></i> <span data-i18n="about.school">Sinh viên IT năm 3 • Chuyên ngành Thương mại Điện tử - ĐHKT-KT Bình Dương (BETU) • K23</span></p>
+          </div>
+          <p class="about__text">
+            <i class="fas fa-code"></i> <span data-i18n="about.text1">Mình là sinh viên IT, học và thực hành code mỗi ngày. Code, e-commerce hay edit video TikTok – mình đều làm để học thật và nâng kỹ năng thật.</span>
+          </p>
+           <p class="about__text">
+            <i class="fas fa-lightbulb"></i> <span data-i18n="about.text2">Ngoài kỹ thuật, mình cũng tìm hiểu thêm về kinh doanh để hiểu bài toán phía sau một sản phẩm, không chỉ là code.</span>
+          </p>
+          <p class="about__text">
+            <i class="fas fa-check-circle"></i> <span data-i18n="about.text3">Mình chưa phải expert, nhưng luôn làm việc nghiêm túc và tìm hiểu kỹ trước khi bắt đầu bất kỳ project nào.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ====================================
+         Services Section
+         ==================================== -->
+    <section class="section section--services" id="services">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" data-i18n="services.title">Kỹ năng</h2>
+          <p class="section__subtitle" data-i18n="services.subtitle">3 mảng mình đang học</p>
+        </div>
+        
+        <div class="services-grid">
+          <!-- Dev Code Service -->
+          <div class="service-card">
+            <div class="service-card__icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="service-card__title">
+              <i class="fas fa-laptop-code"></i> <span data-i18n="services.dev.title">Dev Code</span>
+            </h3>
+            <p class="service-card__desc" data-i18n="services.dev.desc">
+              Có nền tảng code C++, C#, HTML/CSS/JS, PHP, Kotlin, Java. Thành thạo tạo công cụ AI và đang áp dụng vào các project thực tế.
+            </p>
+          </div>
+          
+          <!-- E-commerce Service -->
+          <div class="service-card">
+            <div class="service-card__icon">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <h3 class="service-card__title">
+              <i class="fas fa-shopping-cart"></i> <span data-i18n="services.ecom.title">E-commerce</span>
+            </h3>
+            <p class="service-card__desc" data-i18n="services.ecom.desc">
+              Đang tìm hiểu về e-commerce platforms như Shopify và WooCommerce. Setup cơ bản, theme customization và tích hợp thanh toán.
+            </p>
+          </div>
+          
+          <!-- TikTok Video Editing Service -->
+          <div class="service-card">
+            <div class="service-card__icon">
+              <i class="fab fa-tiktok"></i>
+            </div>
+            <h3 class="service-card__title">
+              <i class="fas fa-video"></i> <span data-i18n="services.tiktok.title">TikTok Video Editing</span>
+            </h3>
+            <p class="service-card__desc" data-i18n="services.tiktok.desc">
+              Mới bắt đầu với video editing, đã làm 3 video âm nhạc cơ bản trên TikTok. Đang học cách tạo hook, timing và subtitle.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ====================================
+         Projects Section
+         ==================================== -->
+    <section class="section section--projects" id="projects">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" data-i18n="projects.title">Dự án tiêu biểu</h2>
+          <p class="section__subtitle" data-i18n="projects.subtitle">Case samples thực tế</p>
+        </div>
+        
+        <div class="projects-grid">
+          
+          <!-- Template để thêm dự án mới:
+          <div class="project-card">
+            <div class="project-card__header">
+              <h3 class="project-card__title">
+                <a href="LINK_DU_AN" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                  <i class="fab fa-github"></i> <span>TÊN DỰ ÁN</span>
+                </a>
+              </h3>
+            </div>
+            <p class="project-card__desc">
+              Mô tả dự án ở đây...
+            </p>
+          </div>
+          -->
+          
+        </div>
+      </div>
+    </section>
+    
+    <!-- ====================================
+         AI Roadmap Section
+         ==================================== -->
+    <section class="section section--services" id="ai-roadmap">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" data-i18n="ai.roadmap.title">Lộ trình AI cho Thương mại điện tử</h2>
+          <p class="section__subtitle" data-i18n="ai.roadmap.subtitle">Kế hoạch phát triển dài hạn</p>
+        </div>
+        
+        <div class="services-grid">
+          <!-- Phase 1: 2026 -->
+          <div class="service-card">
+            <div class="service-card__icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3 class="service-card__title">
+              <i class="fas fa-calendar-alt"></i> <span data-i18n="ai.roadmap.phase1.year">2026 – Nền tảng</span>
+            </h3>
+            <p class="service-card__desc" data-i18n="ai.roadmap.phase1.desc">
+              Xây tool phân tích lợi nhuận và dashboard cơ bản.
+            </p>
+          </div>
+          
+          <!-- Phase 2: 2027-2028 -->
+          <div class="service-card">
+            <div class="service-card__icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="service-card__title">
+              <i class="fas fa-calendar-alt"></i> <span data-i18n="ai.roadmap.phase2.year">2027–2028 – Phát triển</span>
+            </h3>
+            <p class="service-card__desc" data-i18n="ai.roadmap.phase2.desc">
+              Tích hợp dự đoán tồn kho và AI gợi ý nhập hàng.
+            </p>
+          </div>
+          
+          <!-- Phase 3: 2029+ -->
+          <div class="service-card">
+            <div class="service-card__icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3 class="service-card__title">
+              <i class="fas fa-calendar-alt"></i> <span data-i18n="ai.roadmap.phase3.year">2029+ – Mở rộng</span>
+            </h3>
+            <p class="service-card__desc" data-i18n="ai.roadmap.phase3.desc">
+              Phát triển AI Business Advisor theo mô hình SaaS.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ====================================
+         AI Product Concept Section
+         ==================================== -->
+    <section class="section section--about" id="ai-concept">
+      <div class="container">
+        <div class="about">
+          <div class="section__header">
+            <h2 class="section__title" data-i18n="ai.concept.title">AI Business Tools (Concept)</h2>
+            <p class="section__subtitle" data-i18n="ai.concept.subtitle">Ý tưởng công cụ AI cho doanh nghiệp</p>
+          </div>
+          
+          <p class="about__text">
+            <i class="fas fa-brain"></i> <span data-i18n="ai.concept.desc">Công cụ AI hỗ trợ doanh nghiệp tối ưu tồn kho, phân tích lợi nhuận thực tế và dự báo xu hướng thị trường.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ====================================
+         Links Section
+         ==================================== -->
+    <section class="section section--links" id="links">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" data-i18n="links.title">Kết nối</h2>
+          <p class="section__subtitle" data-i18n="links.subtitle">Tìm tôi trên các nền tảng sau</p>
+        </div>
+        
+        <div class="links">
+          <!-- GitHub -->
+          <a href="https://github.com/EmBeHocCode" 
+             class="link-btn" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             aria-label="GitHub Profile">
+            <i class="fab fa-github link-btn__icon"></i>
+            <span class="link-btn__text">GitHub</span>
+          </a>
+          
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/hungng.0505/" 
+             class="link-btn" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             aria-label="Facebook Profile">
+            <i class="fab fa-facebook link-btn__icon"></i>
+            <span class="link-btn__text">Facebook</span>
+          </a>
+          
+          <!-- Messenger -->
+          <a href="https://www.messenger.com/t/100056897048422/" 
+             class="link-btn" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             aria-label="Facebook Messenger">
+            <i class="fab fa-facebook-messenger link-btn__icon"></i>
+            <span class="link-btn__text">Messenger</span>
+          </a>
+          
+          <!-- TikTok -->
+          <a href="https://tiktok.com/@00bidev00" 
+             class="link-btn" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             aria-label="TikTok Profile">
+            <i class="fab fa-tiktok link-btn__icon"></i>
+            <span class="link-btn__text">TikTok</span>
+          </a>
+          
+          <!-- Telegram -->
+          <a href="https://t.me/embidev005" 
+             class="link-btn" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             aria-label="Telegram">
+            <i class="fab fa-telegram link-btn__icon"></i>
+            <span class="link-btn__text">Telegram</span>
+          </a>
+          
+          <!-- Email -->
+          <a href="mailto:mieowshopsite@gmail.com" 
+             class="link-btn"
+             aria-label="Email Contact">
+            <i class="fas fa-envelope link-btn__icon"></i>
+            <span class="link-btn__text">Email</span>
+          </a>
+          
+          <!-- YouTube -->
+          <a href="https://www.youtube.com/@mieowdeveloper05" 
+             class="link-btn" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             aria-label="YouTube Channel">
+            <i class="fab fa-youtube link-btn__icon"></i>
+            <span class="link-btn__text">YouTube</span>
+          </a>
+          
+          <!-- Discord -->
+          <a href="https://discord.gg/sFxwz2M3" 
+             class="link-btn" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             aria-label="Discord Server">
+            <i class="fab fa-discord link-btn__icon"></i>
+            <span class="link-btn__text">Discord</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ====================================
+         Final CTA Section
+         ==================================== -->
+    <section class="section section--cta" id="contact">
+      <div class="container">
+        <div class="cta-box">
+          <h2 class="cta-box__title">
+            <span data-i18n="cta.title">Sẵn sàng bắt đầu dự án?</span> <i class="fas fa-rocket"></i>
+          </h2>
+          <p class="cta-box__text" data-i18n="cta.text">
+            Liên hệ mình qua các phương thức – mình rep nhanh và làm việc rõ ràng.
+          </p>
+          <div class="cta-box__actions">
+            <a href="mailto:mieowshopsite@gmail.com" class="btn btn--primary btn--lg">
+              <i class="fas fa-envelope"></i>
+              <span data-i18n="cta.email">Email</span>
+            </a>
+            <a href="https://t.me/embidev005" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-telegram"></i>
+              <span data-i18n="cta.telegram">Telegram</span>
+            </a>
+            <a href="https://www.facebook.com/hungng.0505/" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-facebook"></i>
+              <span data-i18n="cta.facebook">Facebook</span>
+            </a>
+            <a href="https://m.me/hungng.0505" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-facebook-messenger"></i>
+              <span data-i18n="cta.messenger">Messenger</span>
+            </a>
+            <button id="zalo-btn" class="btn btn--primary btn--lg">
+              <i class="fas fa-qrcode"></i>
+              <span data-i18n="cta.zalo">Zalo</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+  
+  <!-- Zalo QR Modal -->
+  <div id="zalo-modal" class="modal">
+    <div class="modal__overlay" id="modal-overlay"></div>
+    <div class="modal__content">
+      <button class="modal__close" id="modal-close">
+        <i class="fas fa-times"></i>
+      </button>
+      <h3 class="modal__title" data-i18n="modal.zalo.title">Quét mã Zalo để nhắn tin</h3>
+      <img src="assets/img/zalome.jpg" alt="Zalo QR Code" class="modal__qr">
+      <p class="modal__text" data-i18n="modal.zalo.text">Mở ứng dụng Zalo và quét mã QR để kết nối</p>
+    </div>
+  </div>
+  
+  <!-- ====================================
+       Footer
+       ==================================== -->
+  <footer class="section section--footer" id="footer">
+    <div class="container">
+      <div class="footer">
+        <p class="footer__text">
+          <i class="fas fa-sparkles"></i> <span data-i18n="footer.made">Được tạo ra với đam mê và code</span> • © 2026 EmBeby-Dev
+        </p>
+        <p class="footer__text" style="margin-top: var(--space-xs);">
+          <em data-i18n="footer.quote">"Code is poetry, design is art, together they create magic."</em>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Settings Modal -->
+  <div class="modal modal--settings" id="settings-modal">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title" data-i18n="settings.title">Settings</h2>
+        <button class="modal__close" id="close-settings" aria-label="Close settings">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <!-- Language Switcher -->
+        <div class="settings-group">
+          <h3 class="settings-group__title" data-i18n="settings.language">Language</h3>
+          <div class="language-options">
+            <button class="lang-btn" data-lang="vi" aria-label="Vietnamese">
+              <span class="flag">🇻🇳</span>
+              <span>Tiếng Việt</span>
+            </button>
+            <button class="lang-btn" data-lang="en" aria-label="English">
+              <span class="flag">🇬🇧</span>
+              <span>English</span>
+            </button>
+            <button class="lang-btn" data-lang="zh" aria-label="Chinese">
+              <span class="flag">🇨🇳</span>
+              <span>中文</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Theme Toggle -->
+        <div class="settings-group">
+          <h3 class="settings-group__title" data-i18n="settings.theme">Theme</h3>
+          <div class="toggle-option">
+            <label class="toggle">
+              <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
+              <span class="toggle__slider"></span>
+            </label>
+            <span data-i18n="settings.darkMode">Dark Mode</span>
+          </div>
+        </div>
+
+        <!-- Custom Cursor -->
+        <!-- Custom Cursor -->
+        <div class="settings-group">
+          <h3 class="settings-group__title" data-i18n="settings.cursor">Custom Cursor</h3>
+          <div class="toggle-option">
+            <label class="toggle">
+              <input type="checkbox" id="cursor-toggle" checked aria-label="Toggle custom cursor">
+              <span class="toggle__slider"></span>
+            </label>
+            <span data-i18n="settings.enableCursor">Enable Custom Cursor</span>
+          </div>
+        </div>
+
+        <!-- Background Effects -->
+        <div class="settings-group">
+          <h3 class="settings-group__title" data-i18n="settings.effects">Background Effects</h3>
+          <div class="toggle-option">
+            <label class="toggle">
+              <input type="checkbox" id="effects-toggle" checked aria-label="Toggle background effects">
+              <span class="toggle__slider"></span>
+            </label>
+            <span data-i18n="settings.enableEffects">Enable Particles</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal__footer settings-footer">
+        <p data-i18n="settings.note">
+          Settings are saved automatically
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- JavaScript -->
+  <script src="js/main.js?v=10.1" defer></script>
+  
+  <!-- Scripts Architecture -->
+  <script>
+    // Dispatch partials-loaded event immediately since HTML is inlined
+    document.dispatchEvent(new Event('partials-loaded'));
+  </script>
+  <script src="scripts/core/state.js"></script>
+  <script src="scripts/features/sidebar.js?v=1.3"></script>
+  <script src="scripts/features/settings.js?v=1.1"></script>
+  <script src="scripts/features/scrollAnimations.js"></script>
+</body>
+</html>

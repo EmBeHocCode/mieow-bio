@@ -1,0 +1,42 @@
+/* Project Page Specific Styles */
+
+/* Ensure all links are clickable */
+.about__text a,
+.service-card__desc a {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.about__text a:hover,
+.service-card__desc a:hover {
+  color: var(--color-accent-bright, #00d9ff);
+  text-decoration: underline;
+}
+
+/* Code blocks */
+pre {
+  position: relative;
+  z-index: 1;
+}
+
+pre code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Ensure text content has proper z-index */
+.about__text,
+.service-card__desc {
+  position: relative;
+  z-index: 5;
+}
+
+/* Back button hover effect */
+.btn--secondary:hover {
+  transform: translateX(-5px);
+}

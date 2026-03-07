@@ -1,0 +1,21 @@
+# Placeholder for assets folder
+
+Add your images, icons, and other assets here:
+
+- `avatar.jpg` or `avatar.png` - Your profile picture
+- `og-image.jpg` - Open Graph image for social media sharing (1200x630px recommended)
+- `favicon.ico` - Website favicon
+- Any other images or media files
+
+## Recommended Image Sizes
+
+- **Avatar:** 400x400px (square, will be displayed as circle)
+- **OG Image:** 1200x630px (for social media previews)
+- **Favicon:** 32x32px or use emoji/SVG
+
+## Image Optimization Tips
+
+1. Use WebP format for better compression
+2. Compress images before uploading (use tools like TinyPNG, Squoosh)
+3. Use appropriate image sizes (don't upload huge files)
+4. Add alt text for accessibility

@@ -1,0 +1,89 @@
+/**
+ * Scroll Animations
+ * Fade in/out sections on scroll
+ */
+
+/* Hidden state - initial */
+.section-hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Visible state - when in viewport */
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Variant animations for different sections */
+.section--hero.section-hidden {
+  transform: translateY(0) scale(0.95);
+  opacity: 0;
+}
+
+.section--hero.section-visible {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.section--about.section-hidden {
+  transform: translateX(-50px);
+  opacity: 0;
+}
+
+.section--about.section-visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+/* ============================================
+   Performance optimization for mobile
+   ============================================ */
+@media (max-width: 768px) {
+  /* Reduce animation complexity on mobile */
+  .section-hidden {
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .section--hero.section-hidden {
+    transform: translateY(0) scale(0.98);
+  }
+  
+  .section--about.section-hidden,
+  .section--projects.section-hidden,
+  .section--links.section-hidden {
+    transform: translateY(20px);
+  }
+  
+  /* Hardware acceleration */
+  .section {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+
+.section--cta.section-hidden {
+  transform: translateY(50px) scale(0.9);
+  opacity: 0;
+}
+
+.section--cta.section-visible {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .section-hidden,
+  .section-visible {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,235 @@
+/* ============================================
+   CURSOR.CSS - Custom Cursor Effects
+   ============================================
+   - Custom cursor with glow
+   - Light trail effect
+   ============================================ */
+
+/* Hide default cursor */
+body {
+  cursor: none;
+}
+
+/* Restore default cursor for interactive elements */
+a, button, input, textarea, select, .control-btn, .btn, .link-btn {
+  cursor: none !important;
+}
+
+/* Custom Cursor - Dot */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: #ffe6f0;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+  box-shadow: 
+    0 0 15px rgba(255, 192, 224, 0.8),
+    0 0 30px rgba(255, 192, 224, 0.6),
+    0 0 45px rgba(255, 230, 240, 0.4);
+}
+
+/* Custom Cursor - Ring */
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 35px;
+  height: 35px;
+  border: 2px solid rgba(255, 192, 224, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+  opacity: 0.8;
+  box-shadow: 
+    0 0 20px rgba(255, 192, 224, 0.4),
+    inset 0 0 15px rgba(255, 230, 240, 0.3);
+}
+
+/* Hover effect on interactive elements */
+.cursor-hover .cursor-dot {
+  width: 14px;
+  height: 14px;
+  background: #b3f0ff;
+  box-shadow: 
+    0 0 20px rgba(179, 240, 255, 0.9),
+    0 0 40px rgba(179, 240, 255, 0.6),
+    0 0 60px rgba(179, 240, 255, 0.4);
+}
+
+.cursor-hover .cursor-ring {
+  width: 55px;
+  height: 55px;
+  border-color: rgba(179, 240, 255, 0.7);
+  opacity: 1;
+  box-shadow: 
+    0 0 25px rgba(179, 240, 255, 0.5),
+    inset 0 0 20px rgba(179, 240, 255, 0.3);
+}
+
+/* Trail particles */
+.cursor-trail {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9997;
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 230, 240, 0.8);
+  border-radius: 50%;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  box-shadow: 
+    0 0 12px rgba(255, 192, 224, 0.7),
+    0 0 24px rgba(255, 192, 224, 0.4);
+  animation: trailFade 0.6s ease-out forwards;
+}
+
+@keyframes trailFade {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+}
+
+/* Click effect */
+.cursor-click-effect {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9996;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(179, 240, 255, 0.9);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: clickRipple 0.6s ease-out forwards;
+}
+
+@keyframes clickRipple {
+  0% {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(179, 240, 255, 0.8);
+  }
+  100% {
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+    border-width: 1px;
+    box-shadow: 0 0 30px rgba(179, 240, 255, 0);
+  }
+}
+
+/* Click scale animation for cursor dot */
+.cursor-dot.clicking {
+  animation: dotClick 0.3s ease-out;
+}
+
+@keyframes dotClick {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* ============================================
+   Light Theme Overrides - Darker Colors for Visibility
+   ============================================ */
+[data-theme="light"] .cursor-dot {
+  background: #d6006e;
+  box-shadow: 
+    0 0 15px rgba(214, 0, 110, 0.7),
+    0 0 30px rgba(214, 0, 110, 0.5),
+    0 0 45px rgba(214, 0, 110, 0.3);
+}
+
+[data-theme="light"] .cursor-ring {
+  border: 2px solid rgba(214, 0, 110, 0.6);
+  box-shadow: 
+    0 0 20px rgba(214, 0, 110, 0.4),
+    inset 0 0 15px rgba(214, 0, 110, 0.3);
+}
+
+[data-theme="light"] .cursor-hover .cursor-dot {
+  background: #6b2fb5;
+  box-shadow: 
+    0 0 20px rgba(107, 47, 181, 0.8),
+    0 0 40px rgba(107, 47, 181, 0.6),
+    0 0 60px rgba(107, 47, 181, 0.4);
+}
+
+[data-theme="light"] .cursor-hover .cursor-ring {
+  border-color: rgba(107, 47, 181, 0.7);
+  box-shadow: 
+    0 0 25px rgba(107, 47, 181, 0.5),
+    inset 0 0 20px rgba(107, 47, 181, 0.3);
+}
+
+[data-theme="light"] .cursor-trail {
+  background: rgba(214, 0, 110, 0.7);
+  border: 2px solid rgba(107, 47, 181, 0.5);
+  box-shadow: 
+    0 0 12px rgba(107, 47, 181, 0.6),
+    0 0 24px rgba(107, 47, 181, 0.4);
+}
+
+/* Mobile: Show default cursor */
+@media (max-width: 768px), (hover: none) {
+  body {
+    cursor: auto;
+  }
+  
+  a, button, input, textarea, select, .control-btn, .btn, .link-btn {
+    cursor: pointer !important;
+  }
+  
+  .cursor-dot,
+  .cursor-ring,
+  .cursor-trail {
+    display: none !important;
+  }
+}
+
+/* Disable cursor effects when user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  body {
+    cursor: auto;
+  }
+  
+  .cursor-dot,
+  .cursor-ring,
+  .cursor-trail {
+    display: none !important;
+  }
+}
+
+/* ============================================
+   Disable Custom Cursor (Settings Toggle)
+   ============================================ */
+body.no-custom-cursor,
+body.no-custom-cursor * {
+  cursor: auto !important;
+}
+
+body.no-custom-cursor .cursor-dot,
+body.no-custom-cursor .cursor-ring,
+body.no-custom-cursor .cursor-trail,
+body.no-custom-cursor .cursor-click-effect {
+  display: none !important;
+}
