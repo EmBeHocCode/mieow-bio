@@ -1,1009 +1,128 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal bio website - A modern, professional personal brand page">
-  <meta name="author" content="Your Name">
-  <meta name="theme-color" content="#0a0a0a">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yourwebsite.com/">
-  <meta property="og:title" content="Your Name - Personal Bio">
-  <meta property="og:description" content="Welcome to my personal space on the web">
-  <meta property="og:image" content="https://yourwebsite.com/assets/og-image.jpg">
-  
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://yourwebsite.com/">
-  <meta property="twitter:title" content="Your Name - Personal Bio">
-  <meta property="twitter:description" content="Welcome to my personal space on the web">
-  <meta property="twitter:image" content="https://yourwebsite.com/assets/og-image.jpg">
-  
-  <title>EmBeby-Developer | IT & E-commerce</title>
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/gif" href="assets/img/mieow.gif">
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/base.css?v=10.0">
-  <link rel="stylesheet" href="css/layout.css?v=11.0">
-  <link rel="stylesheet" href="css/components.css?v=10.0">
-  <link rel="stylesheet" href="css/background.css?v=9.0">
-  <link rel="stylesheet" href="css/modal.css?v=10.0">
-  <link rel="stylesheet" href="css/settings.css?v=13.0">
-  <link rel="stylesheet" href="css/cursor.css?v=9.0">
-  <link rel="stylesheet" href="css/menu-toggle.css?v=11.0">
-  <link rel="stylesheet" href="css/scroll-animations.css?v=11.0">
-</head>
-<body class="site">
-  <!-- Menu Toggle Button -->
-  <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
-    <div class="menu-toggle__icon">
-      <span class="menu-toggle__bar"></span>
-      <span class="menu-toggle__bar"></span>
-      <span class="menu-toggle__bar"></span>
-    </div>
-  </button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="EmBeby portfolio theo phong cách pixel cyber hybrid: dark futuristic, neon pink-violet, UI pixel nhưng vẫn hiện đại và dễ đọc."
+    />
+    <meta
+      name="theme-color"
+      content="#06010f"
+    />
+    <title>EmBeby | Pixel Hybrid Portfolio</title>
+    <link
+      rel="icon"
+      type="image/gif"
+      href="./assets/img/mieow.gif"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Silkscreen:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at top, rgba(255, 92, 214, 0.12), transparent 30%),
+          linear-gradient(180deg, #05010d 0%, #090215 48%, #05010d 100%);
+        color: #f7f1ff;
+        font-family: "Manrope", sans-serif;
+      }
 
-  <!-- Sidebar Navigation -->
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar__header">
-      <div class="sidebar__avatar">
-        <img src="assets/img/mieow.gif" alt="Avatar" class="sidebar__avatar-img">
-      </div>
-      <button class="sidebar__close" id="sidebar-close" aria-label="Close sidebar">
-        <div class="menu-toggle__icon">
-          <span class="menu-toggle__bar"></span>
-          <span class="menu-toggle__bar"></span>
-          <span class="menu-toggle__bar"></span>
-        </div>
-      </button>
-    </div>
+      .boot-fallback {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
 
-    <nav class="sidebar__nav">
-      <a href="#hero" class="sidebar__nav-link" data-page="home">
-        <i class="fas fa-home sidebar__nav-icon"></i>
-        <span data-i18n="nav.home">Home</span>
-      </a>
-      <a href="#about" class="sidebar__nav-link" data-page="about">
-        <i class="fas fa-user sidebar__nav-icon"></i>
-        <span data-i18n="nav.about">About</span>
-      </a>
-      <a href="#projects" class="sidebar__nav-link" data-page="projects">
-        <i class="fas fa-folder sidebar__nav-icon"></i>
-        <span data-i18n="nav.projects">Projects</span>
-      </a>
-      <a href="#ai-roadmap" class="sidebar__nav-link" data-page="ai-roadmap">
-        <i class="fas fa-brain sidebar__nav-icon"></i>
-        <span data-i18n="nav.ai">AI Vision</span>
-      </a>
-      <a href="#links" class="sidebar__nav-link" data-page="links">
-        <i class="fas fa-link sidebar__nav-icon"></i>
-        <span data-i18n="nav.links">Links</span>
-      </a>
-      <a href="#contact" class="sidebar__nav-link" data-page="contact">
-        <i class="fas fa-envelope sidebar__nav-icon"></i>
-        <span data-i18n="nav.contact">Contact</span>
-      </a>
-    </nav>
+      .boot-panel {
+        max-width: 680px;
+        padding: 28px;
+        background: rgba(11, 8, 24, 0.92);
+        border: 1px solid rgba(255, 92, 214, 0.22);
+        box-shadow:
+          0 18px 48px rgba(6, 4, 20, 0.55),
+          0 0 42px rgba(255, 92, 214, 0.12);
+        clip-path: polygon(
+          0 14px,
+          14px 14px,
+          14px 0,
+          calc(100% - 14px) 0,
+          calc(100% - 14px) 14px,
+          100% 14px,
+          100% calc(100% - 14px),
+          calc(100% - 14px) calc(100% - 14px),
+          calc(100% - 14px) 100%,
+          14px 100%,
+          14px calc(100% - 14px),
+          0 calc(100% - 14px)
+        );
+      }
 
-    <div class="sidebar__footer">
-      <button class="sidebar__settings-btn" id="open-settings" aria-label="Open settings">
-        <i class="fas fa-cog"></i>
-        <span data-i18n="nav.settings">Settings</span>
-      </button>
-    </div>
-  </aside>
+      .boot-panel h1 {
+        margin: 0 0 12px;
+        font-family: "Chakra Petch", sans-serif;
+        font-size: 30px;
+      }
 
-  <!-- Sidebar Overlay (for mobile) -->
-  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+      .boot-panel p {
+        margin: 0 0 12px;
+        line-height: 1.8;
+        color: #b3acd0;
+      }
 
-  <!-- Custom Cursor -->
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
-  
-  <!-- Animated Background -->
-  <div class="particles-background">
-    <!-- Particles -->
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    
-    <!-- Neon scanning lines -->
-    <div class="neon-line"></div>
-    <div class="neon-line"></div>
-    
-    <!-- Floating orbs -->
-    <div class="floating-orb"></div>
-    <div class="floating-orb"></div>
-    <div class="floating-orb"></div>
-  </div>
-  
-  <!-- Control Panel -->
-  <div class="control-panel">
-    <!-- Theme Toggle -->
-    <!-- <button id="theme-toggle" class="control-btn" aria-label="Toggle theme">
-      <i class="fas fa-moon"></i>
-    </button> -->
-    
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-      <button id="lang-toggle" class="control-btn" aria-label="Change language">
-        <i class="fas fa-language"></i>
-        <span id="current-lang">VI</span>
-      </button>
-      <div class="language-menu" id="lang-menu">
-        <button class="lang-option" data-lang="vi">
-          <span class="flag">🇻🇳</span> Tiếng Việt
-        </button>
-        <button class="lang-option" data-lang="en">
-          <span class="flag">🇬🇧</span> English
-        </button>
-        <button class="lang-option" data-lang="zh">
-          <span class="flag">🇨🇳</span> 中文
-        </button>
-      </div>
-    </div>
-    
-    <!-- Music Toggle -->
-    <button id="music-toggle" class="control-btn" aria-label="Toggle music">
-      <i class="fas fa-music"></i>
-    </button>
-  </div>
-  
-  <!-- Background Music -->
-  <audio id="bg-music" loop>
-    <source src="assets/music/music.MP3" type="audio/mpeg">
-  </audio>
-  
-  <!-- Main Content -->
-  <main class="site-content">
-    
-    <!-- ====================================
-         Hero Section
-         ==================================== -->
-    <section class="section section--hero" id="hero">
-      <div class="container">
-        <div class="hero">
-          <!-- Avatar -->
-          <div class="avatar avatar--xl">
-            <!-- Avatar image -->
-            <img src="assets/img/mieow.gif" alt="Your Name" class="avatar__image">
-          </div>
-          
-          <!-- Hero Content -->
-          <div class="hero__content">
-            <h1 class="hero__title">
-              <span class="text-accent">EmBeby</span> – <span data-i18n="hero.title">Code & Create</span> <i class="fas fa-laptop-code"></i><i class="fas fa-sparkles"></i>
-            </h1>
-            <p class="hero__tagline" data-i18n="hero.tagline">
-              Tên thật: Nguyễn Lâm Hùng, hiện là sinh viên IT đang học code, làm web, tools, và tập edit video TikTok.
-            </p>
-            
-            <!-- CTA Buttons -->
-            <div class="hero__cta">
-              <a href="mailto:mieowshopsite@gmail.com" class="btn btn--primary">
-                <i class="fas fa-briefcase"></i>
-                <span data-i18n="hero.cta1">Nhận dự án</span>
-              </a>
-              <a href="#projects" class="btn btn--secondary">
-                <i class="fas fa-code"></i>
-                <span data-i18n="hero.cta2">Xem projects</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- ====================================
-         About Section
-         ==================================== -->
-    <section class="section section--about" id="about">
-      <div class="container">
-        <div class="about">
-          <div class="section__header">
-            <h2 class="section__title" data-i18n="about.title">Về tôi</h2>
-          </div>
-          <div class="about__intro">
-            <p class="about__name"><i class="far fa-user"></i> <span data-i18n="about.name">Nguyễn Lâm Hùng</span></p>
-            <p class="about__school"><i class="far fa-building"></i> <span data-i18n="about.school">Sinh viên IT năm 3 • Chuyên ngành Thương mại Điện tử - ĐHKT-KT Bình Dương (BETU) • K23</span></p>
-          </div>
-          <p class="about__text">
-            <i class="fas fa-code"></i> <span data-i18n="about.text1">Mình là sinh viên IT, học và thực hành code mỗi ngày. Code, e-commerce hay edit video TikTok – mình đều làm để học thật và nâng kỹ năng thật.</span>
+      .boot-panel code {
+        padding: 2px 8px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: #ff8eea;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="boot-fallback">
+        <div class="boot-panel">
+          <h1>Portfolio đang chờ Vite khởi chạy</h1>
+          <p>
+            Bạn đang mở app bằng kiểu static server như Live Server
+            <code>127.0.0.1:5500</code>, nên file <code>src/main.tsx</code> không được bundle và trang sẽ trắng.
           </p>
-           <p class="about__text">
-            <i class="fas fa-lightbulb"></i> <span data-i18n="about.text2">Ngoài kỹ thuật, mình cũng tìm hiểu thêm về kinh doanh để hiểu bài toán phía sau một sản phẩm, không chỉ là code.</span>
+          <p>
+            Chạy local đúng cách:
+            <code>npm install</code>
+            rồi
+            <code>npm run dev</code>
           </p>
-          <p class="about__text">
-            <i class="fas fa-check-circle"></i> <span data-i18n="about.text3">Mình chưa phải expert, nhưng luôn làm việc nghiêm túc và tìm hiểu kỹ trước khi bắt đầu bất kỳ project nào.</span>
+          <p>
+            Nếu muốn up host tĩnh, hãy dùng nội dung trong thư mục
+            <code>dist/</code>
+            sau khi chạy
+            <code>npm run build</code>.
           </p>
         </div>
       </div>
-    </section>
-    
-    <!-- ====================================
-         Services Section
-         ==================================== -->
-    <section class="section section--services" id="services">
-      <div class="container">
-        <div class="section__header">
-          <h2 class="section__title" data-i18n="services.title">Kỹ năng</h2>
-          <p class="section__subtitle" data-i18n="services.subtitle">3 mảng mình đang học</p>
-        </div>
-        
-        <div class="services-grid">
-          <!-- Dev Code Service -->
-          <div class="service-card">
-            <div class="service-card__icon">
-              <i class="fas fa-code"></i>
-            </div>
-            <h3 class="service-card__title">
-              <i class="fas fa-laptop-code"></i> <span data-i18n="services.dev.title">Dev Code</span>
-            </h3>
-            <p class="service-card__desc" data-i18n="services.dev.desc">
-              Có nền tảng code C++, C#, HTML/CSS/JS, PHP, Kotlin, Java. Thành thạo tạo công cụ AI và đang áp dụng vào các project thực tế.
-            </p>
-          </div>
-          
-          <!-- E-commerce Service -->
-          <div class="service-card">
-            <div class="service-card__icon">
-              <i class="fas fa-shopping-cart"></i>
-            </div>
-            <h3 class="service-card__title">
-              <i class="fas fa-shopping-cart"></i> <span data-i18n="services.ecom.title">E-commerce</span>
-            </h3>
-            <p class="service-card__desc" data-i18n="services.ecom.desc">
-              Đang tìm hiểu về e-commerce platforms như Shopify và WooCommerce. Setup cơ bản, theme customization và tích hợp thanh toán.
-            </p>
-          </div>
-          
-          <!-- TikTok Video Editing Service -->
-          <div class="service-card">
-            <div class="service-card__icon">
-              <i class="fab fa-tiktok"></i>
-            </div>
-            <h3 class="service-card__title">
-              <i class="fas fa-video"></i> <span data-i18n="services.tiktok.title">TikTok Video Editing</span>
-            </h3>
-            <p class="service-card__desc" data-i18n="services.tiktok.desc">
-              Mới bắt đầu với video editing, đã làm 3 video âm nhạc cơ bản trên TikTok. Đang học cách tạo hook, timing và subtitle.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- ====================================
-         Projects Section
-         ==================================== -->
-    <section class="section section--projects" id="projects">
-      <div class="container">
-        <div class="section__header">
-          <h2 class="section__title" data-i18n="projects.title">Dự án tiêu biểu</h2>
-          <p class="section__subtitle" data-i18n="projects.subtitle">Case samples thực tế</p>
-        </div>
-        
-        <div class="projects-grid">
-
-          <!-- Project 1: mieow-bio -->
-          <div class="project-card">
-            <div class="project-card__header">
-              <h3 class="project-card__title">
-                <a href="https://github.com/EmBeHocCode/mieow-bio" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
-                  <i class="fab fa-github"></i> <span>mieow-bio</span>
-                </a>
-              </h3>
-            </div>
-            <p class="project-card__desc" data-i18n="projects.p1.desc">Trang bio/portfolio cá nhân dạng static website. Có sidebar điều hướng, hiệu ứng nền động, nhạc nền, custom cursor và hỗ trợ chuyển đổi ngôn ngữ VI/EN/ZH.</p>
-            <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.85rem;">
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(255,165,0,0.12); border:1px solid rgba(255,165,0,0.3); color:#fbbf24;">HTML5</span>
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(97,218,251,0.12); border:1px solid rgba(97,218,251,0.3); color:#38bdf8;">CSS3</span>
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(247,223,30,0.12); border:1px solid rgba(247,223,30,0.3); color:#facc15;">Vanilla JS</span>
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); color:var(--color-text-secondary);">Font Awesome</span>
-            </div>
-            <div style="margin-top:1rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
-              <a href="https://github.com/EmBeHocCode/mieow-bio" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" style="font-size:0.85rem; padding:0.45rem 1rem;">
-                <i class="fab fa-github"></i> <span data-i18n="projects.p1.btn">Xem repo</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Project 2: The-Bot-Demo (Meow — Zalo AI Bot) -->
-          <div class="project-card">
-            <div class="project-card__header">
-              <h3 class="project-card__title">
-                <span style="color: inherit;">
-                  <i class="fas fa-robot"></i> <span>Meow — Zalo AI Bot</span>
-                </span>
-              </h3>
-              <span style="font-size:0.72rem; padding:0.15rem 0.55rem; border-radius:99px; background:rgba(251,146,60,0.15); border:1px solid rgba(251,146,60,0.35); color:#fb923c; margin-top:0.4rem; display:inline-block;">
-                <i class="fas fa-lock" style="font-size:0.65rem;"></i> Closed Source
-              </span>
-            </div>
-            <p class="project-card__desc" data-i18n="projects.p2.desc">Chatbot AI đa năng cho Zalo. Dùng Gemini 2.5 Flash với 50+ tools qua 9 modules, streaming thời gian thực, long-term memory, web dashboard quản lý và cloud backup tự động.</p>
-            <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.85rem;">
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(56,189,248,0.12); border:1px solid rgba(56,189,248,0.3); color:#38bdf8;">TypeScript</span>
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(255,165,0,0.12); border:1px solid rgba(255,165,0,0.3); color:#fbbf24;">Bun</span>
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(97,218,251,0.12); border:1px solid rgba(97,218,251,0.3); color:#61DAFB;">React 19</span>
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.12); color:var(--color-text-secondary);">Next.js 16</span>
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(52,211,153,0.12); border:1px solid rgba(52,211,153,0.3); color:#34d399;">Gemini AI</span>
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); color:var(--color-text-secondary);">SQLite</span>
-            </div>
-            <div style="margin-top:1rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
-              <a href="https://github.com/EmBeHocCode/The-Bot-Demo/blob/main/README.md" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="font-size:0.85rem; padding:0.45rem 1rem;">
-                <i class="fas fa-book-open"></i> <span data-i18n="projects.p2.btn">README</span>
-              </a>
-              <a href="https://github.com/EmBeHocCode/The-Bot-Demo/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" style="font-size:0.85rem; padding:0.45rem 1rem;">
-                <i class="fas fa-file-contract"></i> <span>License</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Project 3: MieowTruyenTranh -->
-          <div class="project-card">
-            <div class="project-card__header">
-              <h3 class="project-card__title">
-                <a href="https://github.com/EmBeHocCode/MieowTruyenTranh" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
-                  <i class="fab fa-github"></i> <span>MieowTruyenTranh</span>
-                </a>
-              </h3>
-            </div>
-            <p class="project-card__desc" data-i18n="projects.p3.desc">Ứng dụng web PHP thuần cho cửa hàng truyện tranh trực tuyến. Catalogue sản phẩm, giỏ hàng, đặt hàng, dashboard admin/staff và thanh toán VietQR + SePay.</p>
-            <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.85rem;">
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(119,107,180,0.18); border:1px solid rgba(119,107,180,0.4); color:#a78bfa;">PHP 7.4+</span>
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(68,121,161,0.15); border:1px solid rgba(68,121,161,0.35); color:#38bdf8;">MySQL</span>
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(121,82,179,0.15); border:1px solid rgba(121,82,179,0.35); color:#c084fc;">Bootstrap 5</span>
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); color:var(--color-text-secondary);">Docker</span>
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(52,211,153,0.12); border:1px solid rgba(52,211,153,0.3); color:#34d399;">VietQR</span>
-            </div>
-            <div style="margin-top:1rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
-              <a href="https://github.com/EmBeHocCode/MieowTruyenTranh" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" style="font-size:0.85rem; padding:0.45rem 1rem;">
-                <i class="fab fa-github"></i> <span data-i18n="projects.p3.btn">Xem repo</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Project 4: SnapTrans -->
-          <div class="project-card">
-            <div class="project-card__header">
-              <h3 class="project-card__title">
-                <a href="https://github.com/EmBeHocCode/SnapTrans" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
-                  <i class="fab fa-github"></i> <span>SnapTrans</span>
-                </a>
-              </h3>
-            </div>
-            <p class="project-card__desc" data-i18n="projects.p4.desc">Công cụ Python dịch nhanh văn bản trên Windows. Chụp màn hình để trích xuất và dịch trực tiếp. Hỗ trợ Offline OCR (Tesseract) và Cloud OCR (Google Vision) độ chính xác cao.</p>
-            <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.85rem;">
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(55,118,171,0.12); border:1px solid rgba(55,118,171,0.3); color:#3776AB;">Python</span>
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); color:var(--color-text-secondary);">Tkinter</span>
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(66,133,244,0.12); border:1px solid rgba(66,133,244,0.3); color:#4285f4;">Google Vision</span>
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(244,67,54,0.12); border:1px solid rgba(244,67,54,0.3); color:#ef4444;">Tesseract OCR</span>
-            </div>
-            <div style="margin-top:1rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
-              <a href="https://github.com/EmBeHocCode/SnapTrans" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" style="font-size:0.85rem; padding:0.45rem 1rem;">
-                <i class="fab fa-github"></i> <span data-i18n="projects.p4.btn">Xem repo</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Project 5: MieowMarket -->
-          <div class="project-card">
-            <div class="project-card__header">
-              <h3 class="project-card__title">
-                <a href="https://github.com/EmBeHocCode/MieowMarket" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
-                  <i class="fab fa-github"></i> <span>MieowMarket</span>
-                </a>
-              </h3>
-            </div>
-            <p class="project-card__desc" data-i18n="projects.p5.desc">Nền tảng e-commerce với Next.js 14 App Router, TypeScript, Tailwind CSS, Prisma và PostgreSQL. Bao gồm User/Admin dashboard riêng biệt, tích hợp giỏ hàng và thanh toán.</p>
-            <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.85rem;">
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.12); color:var(--color-text-secondary);">Next.js 14</span>
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(56,189,248,0.12); border:1px solid rgba(56,189,248,0.3); color:#38bdf8;">TypeScript</span>
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(56,189,248,0.12); border:1px solid rgba(56,189,248,0.3); color:#38bdf8;">Tailwind</span>
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(90,103,216,0.12); border:1px solid rgba(90,103,216,0.3); color:#818cf8;">Prisma</span>
-              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:99px; background:rgba(51,103,145,0.12); border:1px solid rgba(51,103,145,0.3); color:#3b82f6;">PostgreSQL</span>
-            </div>
-            <div style="margin-top:1rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
-              <a href="https://github.com/EmBeHocCode/MieowMarket" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" style="font-size:0.85rem; padding:0.45rem 1rem;">
-                <i class="fab fa-github"></i> <span data-i18n="projects.p5.btn">Xem repo</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Template để thêm dự án mới:
-          <div class="project-card">
-            <div class="project-card__header">
-              <h3 class="project-card__title">
-                <a href="LINK_DU_AN" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
-                  <i class="fab fa-github"></i> <span>TÊN DỰ ÁN</span>
-                </a>
-              </h3>
-            </div>
-            <p class="project-card__desc">
-              Mô tả dự án ở đây...
-            </p>
-          </div>
-          -->
-          
-        </div>
-      </div>
-    </section>
-    
-    <!-- ====================================
-         AI Roadmap Section
-         ==================================== -->
-    <section class="section section--services" id="ai-roadmap">
-      <div class="container">
-        <div class="section__header">
-          <h2 class="section__title" data-i18n="ai.roadmap.title">Lộ trình AI cho Thương mại điện tử</h2>
-          <p class="section__subtitle" data-i18n="ai.roadmap.subtitle">Chi tiết theo tháng · 2026–2027</p>
-        </div>
-
-        <style>
-          /* ── Accordion Timeline ── */
-          .tl-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-          }
-          @media (max-width: 680px) { .tl-grid { grid-template-columns: 1fr; } }
-
-          .tl-col__year {
-            font-size: var(--font-size-xl);
-            font-weight: var(--font-weight-bold);
-            color: var(--color-accent);
-            margin-bottom: 1rem;
-            display: flex; align-items: center; gap: 0.5rem;
-            padding-bottom: 0.6rem;
-            border-bottom: 1px solid rgba(255,0,110,0.2);
-          }
-
-          /* Accordion item */
-          .tl-acc {
-            border-left: 2px solid rgba(255,0,110,0.2);
-            padding-left: 1.1rem;
-            display: flex; flex-direction: column; gap: 0;
-          }
-          .tl-acc__item {
-            position: relative;
-            cursor: pointer;
-            user-select: none;
-          }
-          /* Dot on the line */
-          .tl-acc__item::before {
-            content: '';
-            position: absolute;
-            left: -1.68rem;
-            top: 1.05rem;
-            width: 0.8rem; height: 0.8rem;
-            border-radius: 50%;
-            background: var(--color-bg-secondary, #1a1a2e);
-            border: 2px solid rgba(255,0,110,0.35);
-            transition: border-color 0.2s, background 0.2s;
-            z-index: 1;
-          }
-          .tl-acc__item:hover::before,
-          .tl-acc__item.is-open::before { border-color: var(--color-accent); }
-          .tl-acc__item--current::before {
-            background: var(--color-accent);
-            border-color: var(--color-accent);
-            box-shadow: 0 0 0 3px rgba(255,0,110,0.15);
-            animation: tl2-pulse 2s ease-in-out infinite;
-          }
-          @keyframes tl2-pulse {
-            0%,100% { box-shadow: 0 0 0 3px rgba(255,0,110,0.15); }
-            50%      { box-shadow: 0 0 0 6px rgba(255,0,110,0.05); }
-          }
-
-          /* Header row */
-          .tl-acc__head {
-            display: flex; align-items: center; gap: 0.6rem;
-            padding: 0.6rem 0;
-            border-radius: 6px;
-            transition: background 0.15s;
-          }
-          .tl-acc__item:hover .tl-acc__head { background: rgba(255,255,255,0.03); }
-
-          .tl-acc__badge {
-            flex-shrink: 0;
-            font-size: 0.68rem; font-weight: 700;
-            padding: 0.12rem 0.5rem; border-radius: 99px;
-            background: rgba(255,0,110,0.1);
-            border: 1px solid rgba(255,0,110,0.22);
-            color: var(--color-accent);
-            letter-spacing: 0.04em; white-space: nowrap;
-          }
-          .tl-acc__badge--current {
-            background: rgba(255,0,110,0.2);
-            border-color: var(--color-accent);
-          }
-
-          .tl-acc__title {
-            font-size: var(--font-size-sm);
-            font-weight: var(--font-weight-semibold);
-            color: var(--color-text);
-            flex: 1;
-            line-height: 1.4;
-          }
-          .tl-acc__chevron {
-            flex-shrink: 0;
-            font-size: 0.7rem;
-            color: var(--color-text-secondary);
-            transition: transform 0.25s ease;
-          }
-          .tl-acc__item.is-open .tl-acc__chevron { transform: rotate(180deg); }
-
-          /* Collapsible body */
-          .tl-acc__body {
-            overflow: hidden;
-            max-height: 0;
-            transition: max-height 0.32s ease, padding 0.2s ease;
-          }
-          .tl-acc__item.is-open .tl-acc__body { max-height: 160px; }
-          .tl-acc__desc {
-            font-size: var(--font-size-sm);
-            color: var(--color-text-secondary);
-            line-height: 1.65;
-            padding: 0.1rem 0 0.85rem 0;
-            margin: 0;
-          }
-        </style>
-
-        <div class="tl-grid">
-
-          <!-- ══ 2026 ══ -->
-          <div>
-            <div class="tl-col__year"><i class="fas fa-calendar-alt"></i> 2026</div>
-            <div class="tl-acc" id="tl-2026">
-
-              <div class="tl-acc__item tl-acc__item--current is-open">
-                <div class="tl-acc__head">
-                  <span class="tl-acc__badge tl-acc__badge--current" data-i18n="ai.tl.26.t3.badge">● T3 · Hiện tại</span>
-                  <span class="tl-acc__title" data-i18n="ai.tl.26.t3.title">Meow — Zalo AI Bot v1.2</span>
-                  <i class="fas fa-chevron-down tl-acc__chevron"></i>
-                </div>
-                <div class="tl-acc__body">
-                  <p class="tl-acc__desc" data-i18n="ai.tl.26.t3.desc">Gemini 2.5 Flash, streaming thời gian thực, 50+ tools, web dashboard quản lý, long-term memory và cloud backup tự động.</p>
-                </div>
-              </div>
-
-              <div class="tl-acc__item">
-                <div class="tl-acc__head">
-                  <span class="tl-acc__badge">T4–T5</span>
-                  <span class="tl-acc__title" data-i18n="ai.tl.26.t45.title">Hoàn thiện Bot Demo · Test &amp; tài liệu</span>
-                  <i class="fas fa-chevron-down tl-acc__chevron"></i>
-                </div>
-                <div class="tl-acc__body">
-                  <p class="tl-acc__desc" data-i18n="ai.tl.26.t45.desc">Bổ sung test integration, chuẩn hóa codebase, tối ưu prompt persona, chuẩn bị cho user ngoài thử nghiệm.</p>
-                </div>
-              </div>
-
-              <div class="tl-acc__item">
-                <div class="tl-acc__head">
-                  <span class="tl-acc__badge">T6</span>
-                  <span class="tl-acc__title" data-i18n="ai.tl.26.t6.title">Tool phân tích lợi nhuận (phase 1)</span>
-                  <i class="fas fa-chevron-down tl-acc__chevron"></i>
-                </div>
-                <div class="tl-acc__body">
-                  <p class="tl-acc__desc" data-i18n="ai.tl.26.t6.desc">Dashboard e-commerce cơ bản: nhập dữ liệu sản phẩm, tính lợi nhuận thực, visualize theo biểu đồ đơn giản.</p>
-                </div>
-              </div>
-
-              <div class="tl-acc__item">
-                <div class="tl-acc__head">
-                  <span class="tl-acc__badge">T7–T8</span>
-                  <span class="tl-acc__title" data-i18n="ai.tl.26.t78.title">Module tồn kho &amp; cảnh báo nhập hàng</span>
-                  <i class="fas fa-chevron-down tl-acc__chevron"></i>
-                </div>
-                <div class="tl-acc__body">
-                  <p class="tl-acc__desc" data-i18n="ai.tl.26.t78.desc">AI dự báo ngưỡng tồn kho an toàn, tự động gợi ý số lượng và thời điểm nhập hàng phù hợp.</p>
-                </div>
-              </div>
-
-              <div class="tl-acc__item">
-                <div class="tl-acc__head">
-                  <span class="tl-acc__badge">T9–T10</span>
-                  <span class="tl-acc__title" data-i18n="ai.tl.26.t910.title">Tốt nghiệp BETU · Deploy thực tế</span>
-                  <i class="fas fa-chevron-down tl-acc__chevron"></i>
-                </div>
-                <div class="tl-acc__body">
-                  <p class="tl-acc__desc" data-i18n="ai.tl.26.t910.desc">Hoàn thành chương trình học, thử nghiệm tool với vài cửa hàng nhỏ, thu thập feedback thực tế.</p>
-                </div>
-              </div>
-
-              <div class="tl-acc__item">
-                <div class="tl-acc__head">
-                  <span class="tl-acc__badge">T11–T12</span>
-                  <span class="tl-acc__title" data-i18n="ai.tl.26.t1112.title">Refactor · Chuẩn bị scale</span>
-                  <i class="fas fa-chevron-down tl-acc__chevron"></i>
-                </div>
-                <div class="tl-acc__body">
-                  <p class="tl-acc__desc" data-i18n="ai.tl.26.t1112.desc">Tối ưu hiệu năng, tái cấu trúc monorepo, xây API layer cho tích hợp bên ngoài.</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- ══ 2027 ══ -->
-          <div>
-            <div class="tl-col__year"><i class="fas fa-calendar-alt"></i> 2027</div>
-            <div class="tl-acc" id="tl-2027">
-
-              <div class="tl-acc__item">
-                <div class="tl-acc__head">
-                  <span class="tl-acc__badge">T1–T2</span>
-                  <span class="tl-acc__title" data-i18n="ai.tl.27.t12.title">AI gợi ý nhập hàng từ lịch sử bán</span>
-                  <i class="fas fa-chevron-down tl-acc__chevron"></i>
-                </div>
-                <div class="tl-acc__body">
-                  <p class="tl-acc__desc" data-i18n="ai.tl.27.t12.desc">Dùng dữ liệu lịch sử để train model dự đoán xu hướng theo mùa vụ, sự kiện và hành vi người mua.</p>
-                </div>
-              </div>
-
-              <div class="tl-acc__item">
-                <div class="tl-acc__head">
-                  <span class="tl-acc__badge">T3–T4</span>
-                  <span class="tl-acc__title" data-i18n="ai.tl.27.t34.title">Tích hợp Shopify / WooCommerce API</span>
-                  <i class="fas fa-chevron-down tl-acc__chevron"></i>
-                </div>
-                <div class="tl-acc__body">
-                  <p class="tl-acc__desc" data-i18n="ai.tl.27.t34.desc">Kết nối với nền tảng e-commerce, đồng bộ tự động đơn hàng, tồn kho và sản phẩm theo thời gian thực.</p>
-                </div>
-              </div>
-
-              <div class="tl-acc__item">
-                <div class="tl-acc__head">
-                  <span class="tl-acc__badge">T5–T6</span>
-                  <span class="tl-acc__title" data-i18n="ai.tl.27.t56.title">Beta launch AI Business Advisor</span>
-                  <i class="fas fa-chevron-down tl-acc__chevron"></i>
-                </div>
-                <div class="tl-acc__body">
-                  <p class="tl-acc__desc" data-i18n="ai.tl.27.t56.desc">Mở beta cho doanh nghiệp nhỏ, thu thập feedback, đo ROI thực tế và cải thiện liên tục.</p>
-                </div>
-              </div>
-
-              <div class="tl-acc__item">
-                <div class="tl-acc__head">
-                  <span class="tl-acc__badge">T7–T9</span>
-                  <span class="tl-acc__title" data-i18n="ai.tl.27.t79.title">Mở rộng sang B2B nhỏ lẻ</span>
-                  <i class="fas fa-chevron-down tl-acc__chevron"></i>
-                </div>
-                <div class="tl-acc__body">
-                  <p class="tl-acc__desc" data-i18n="ai.tl.27.t79.desc">Gói subscription, onboarding tự động, hỗ trợ khách hàng theo từng ngành hàng.</p>
-                </div>
-              </div>
-
-              <div class="tl-acc__item">
-                <div class="tl-acc__head">
-                  <span class="tl-acc__badge">T10–T12</span>
-                  <span class="tl-acc__title" data-i18n="ai.tl.27.t1012.title">V2.0 · AI Commerce Platform</span>
-                  <i class="fas fa-chevron-down tl-acc__chevron"></i>
-                </div>
-                <div class="tl-acc__body">
-                  <p class="tl-acc__desc" data-i18n="ai.tl.27.t1012.desc">Nền tảng tổng hợp: lợi nhuận, tồn kho, dự báo xu hướng và AI advisor trong một sản phẩm SaaS.</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-        </div><!-- /tl-grid -->
-
-
-        <!-- Accordion JS -->
-        <script>
-        (function(){
-          document.querySelectorAll('.tl-acc__item').forEach(function(item) {
-            item.addEventListener('click', function() {
-              var isOpen = item.classList.contains('is-open');
-              // Close all in same group
-              var group = item.closest('.tl-acc');
-              group.querySelectorAll('.tl-acc__item').forEach(function(i) { i.classList.remove('is-open'); });
-              // Toggle current
-              if (!isOpen) item.classList.add('is-open');
-            });
-          });
-        })();
-        </script>
-
-      </div>
-    </section>
-
-
-
-    <!-- ====================================
-         AI Product Concept Section
-         ==================================== -->
-    <section class="section section--about" id="ai-concept">
-      <div class="container">
-        <div class="about">
-          <div class="section__header">
-            <h2 class="section__title" data-i18n="ai.concept.title">AI Business Tools (Concept)</h2>
-            <p class="section__subtitle" data-i18n="ai.concept.subtitle">Ý tưởng công cụ AI cho doanh nghiệp</p>
-          </div>
-          
-          <p class="about__text">
-            <i class="fas fa-brain"></i> <span data-i18n="ai.concept.desc">Công cụ AI hỗ trợ doanh nghiệp tối ưu tồn kho, phân tích lợi nhuận thực tế và dự báo xu hướng thị trường.</span>
-          </p>
-        </div>
-      </div>
-    </section>
-    
-    <!-- ====================================
-         Links Section
-         ==================================== -->
-    <section class="section section--links" id="links">
-      <div class="container">
-        <div class="section__header">
-          <h2 class="section__title" data-i18n="links.title">Kết nối</h2>
-          <p class="section__subtitle" data-i18n="links.subtitle">Tìm tôi trên các nền tảng sau</p>
-        </div>
-        
-        <div class="links">
-          <!-- GitHub -->
-          <a href="https://github.com/EmBeHocCode" 
-             class="link-btn" 
-             target="_blank" 
-             rel="noopener noreferrer"
-             aria-label="GitHub Profile">
-            <i class="fab fa-github link-btn__icon"></i>
-            <span class="link-btn__text">GitHub</span>
-          </a>
-          
-          <!-- Facebook -->
-          <a href="https://www.facebook.com/hungng.0505/" 
-             class="link-btn" 
-             target="_blank" 
-             rel="noopener noreferrer"
-             aria-label="Facebook Profile">
-            <i class="fab fa-facebook link-btn__icon"></i>
-            <span class="link-btn__text">Facebook</span>
-          </a>
-          
-          <!-- Messenger -->
-          <a href="https://www.messenger.com/t/100056897048422/" 
-             class="link-btn" 
-             target="_blank" 
-             rel="noopener noreferrer"
-             aria-label="Facebook Messenger">
-            <i class="fab fa-facebook-messenger link-btn__icon"></i>
-            <span class="link-btn__text">Messenger</span>
-          </a>
-          
-          <!-- TikTok -->
-          <a href="https://tiktok.com/@00bidev00" 
-             class="link-btn" 
-             target="_blank" 
-             rel="noopener noreferrer"
-             aria-label="TikTok Profile">
-            <i class="fab fa-tiktok link-btn__icon"></i>
-            <span class="link-btn__text">TikTok</span>
-          </a>
-          
-          <!-- Telegram -->
-          <a href="https://t.me/embidev005" 
-             class="link-btn" 
-             target="_blank" 
-             rel="noopener noreferrer"
-             aria-label="Telegram">
-            <i class="fab fa-telegram link-btn__icon"></i>
-            <span class="link-btn__text">Telegram</span>
-          </a>
-          
-          <!-- Email -->
-          <a href="mailto:mieowshopsite@gmail.com" 
-             class="link-btn"
-             aria-label="Email Contact">
-            <i class="fas fa-envelope link-btn__icon"></i>
-            <span class="link-btn__text">Email</span>
-          </a>
-          
-          <!-- YouTube -->
-          <a href="https://www.youtube.com/@mieowdeveloper05" 
-             class="link-btn" 
-             target="_blank" 
-             rel="noopener noreferrer"
-             aria-label="YouTube Channel">
-            <i class="fab fa-youtube link-btn__icon"></i>
-            <span class="link-btn__text">YouTube</span>
-          </a>
-          
-          <!-- Discord -->
-          <a href="https://discord.gg/sFxwz2M3" 
-             class="link-btn" 
-             target="_blank" 
-             rel="noopener noreferrer"
-             aria-label="Discord Server">
-            <i class="fab fa-discord link-btn__icon"></i>
-            <span class="link-btn__text">Discord</span>
-          </a>
-        </div>
-      </div>
-    </section>
-    
-    <!-- ====================================
-         Final CTA Section
-         ==================================== -->
-    <section class="section section--cta" id="contact">
-      <div class="container">
-        <div class="cta-box">
-          <h2 class="cta-box__title">
-            <span data-i18n="cta.title">Sẵn sàng bắt đầu dự án?</span> <i class="fas fa-rocket"></i>
-          </h2>
-          <p class="cta-box__text" data-i18n="cta.text">
-            Liên hệ mình qua các phương thức – mình rep nhanh và làm việc rõ ràng.
-          </p>
-          <div class="cta-box__actions">
-            <a href="mailto:mieowshopsite@gmail.com" class="btn btn--primary btn--lg">
-              <i class="fas fa-envelope"></i>
-              <span data-i18n="cta.email">Email</span>
-            </a>
-            <a href="https://t.me/embidev005" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-telegram"></i>
-              <span data-i18n="cta.telegram">Telegram</span>
-            </a>
-            <a href="https://www.facebook.com/hungng.0505/" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-facebook"></i>
-              <span data-i18n="cta.facebook">Facebook</span>
-            </a>
-            <a href="https://m.me/hungng.0505" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-facebook-messenger"></i>
-              <span data-i18n="cta.messenger">Messenger</span>
-            </a>
-            <button id="zalo-btn" class="btn btn--primary btn--lg">
-              <i class="fas fa-qrcode"></i>
-              <span data-i18n="cta.zalo">Zalo</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-  </main>
-  
-  <!-- Zalo QR Modal -->
-  <div id="zalo-modal" class="modal">
-    <div class="modal__overlay" id="modal-overlay"></div>
-    <div class="modal__content">
-      <button class="modal__close" id="modal-close">
-        <i class="fas fa-times"></i>
-      </button>
-      <h3 class="modal__title" data-i18n="modal.zalo.title">Quét mã Zalo để nhắn tin</h3>
-      <img src="assets/img/zalome.jpg" alt="Zalo QR Code" class="modal__qr">
-      <p class="modal__text" data-i18n="modal.zalo.text">Mở ứng dụng Zalo và quét mã QR để kết nối</p>
     </div>
-  </div>
-  
-  <!-- ====================================
-       Footer
-       ==================================== -->
-  <footer class="section section--footer" id="footer">
-    <div class="container">
-      <div class="footer">
-        <p class="footer__text">
-          <i class="fas fa-sparkles"></i> <span data-i18n="footer.made">Được tạo ra với đam mê và code</span> • © 2026 EmBeby-Dev
-        </p>
-        <p class="footer__text" style="margin-top: var(--space-xs);">
-          <em data-i18n="footer.quote">"Code is poetry, design is art, together they create magic."</em>
-        </p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Settings Modal -->
-  <div class="modal modal--settings" id="settings-modal">
-    <div class="modal__overlay"></div>
-    <div class="modal__content">
-      <div class="modal__header">
-        <h2 class="modal__title" data-i18n="settings.title">Settings</h2>
-        <button class="modal__close" id="close-settings" aria-label="Close settings">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-
-      <div class="modal__body">
-        <!-- Language Switcher -->
-        <div class="settings-group">
-          <h3 class="settings-group__title" data-i18n="settings.language">Language</h3>
-          <div class="language-options">
-            <button class="lang-btn" data-lang="vi" aria-label="Vietnamese">
-              <span class="flag">🇻🇳</span>
-              <span>Tiếng Việt</span>
-            </button>
-            <button class="lang-btn" data-lang="en" aria-label="English">
-              <span class="flag">🇬🇧</span>
-              <span>English</span>
-            </button>
-            <button class="lang-btn" data-lang="zh" aria-label="Chinese">
-              <span class="flag">🇨🇳</span>
-              <span>中文</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Theme Toggle -->
-        <div class="settings-group">
-          <h3 class="settings-group__title" data-i18n="settings.theme">Theme</h3>
-          <div class="toggle-option">
-            <label class="toggle">
-              <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
-              <span class="toggle__slider"></span>
-            </label>
-            <span data-i18n="settings.darkMode">Dark Mode</span>
-          </div>
-        </div>
-
-        <!-- Custom Cursor -->
-        <!-- Custom Cursor -->
-        <div class="settings-group">
-          <h3 class="settings-group__title" data-i18n="settings.cursor">Custom Cursor</h3>
-          <div class="toggle-option">
-            <label class="toggle">
-              <input type="checkbox" id="cursor-toggle" checked aria-label="Toggle custom cursor">
-              <span class="toggle__slider"></span>
-            </label>
-            <span data-i18n="settings.enableCursor">Enable Custom Cursor</span>
-          </div>
-        </div>
-
-        <!-- Background Effects -->
-        <div class="settings-group">
-          <h3 class="settings-group__title" data-i18n="settings.effects">Background Effects</h3>
-          <div class="toggle-option">
-            <label class="toggle">
-              <input type="checkbox" id="effects-toggle" checked aria-label="Toggle background effects">
-              <span class="toggle__slider"></span>
-            </label>
-            <span data-i18n="settings.enableEffects">Enable Particles</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal__footer settings-footer">
-        <p data-i18n="settings.note">
-          Settings are saved automatically
-        </p>
-      </div>
-    </div>
-  </div>
-  
-
-  <!-- JavaScript -->
-  <script src="js/main.js?v=10.3" defer></script>
-  
-  <!-- Scripts Architecture -->
-  <script>
-    // Dispatch partials-loaded event immediately since HTML is inlined
-    document.dispatchEvent(new Event('partials-loaded'));
-  </script>
-  <script src="scripts/core/state.js"></script>
-  <script src="scripts/features/sidebar.js?v=1.3"></script>
-  <script src="scripts/features/settings.js?v=1.1"></script>
-  <script src="scripts/features/scrollAnimations.js"></script>
-</body>
+    <script
+      type="module"
+      src="/src/main.tsx"
+    ></script>
+  </body>
 </html>
