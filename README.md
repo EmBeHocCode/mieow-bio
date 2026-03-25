@@ -2,7 +2,7 @@
 
 Landing page portfolio cá nhân theo phong cách pixel-hybrid, dùng để giới thiệu hồ sơ cá nhân, kỹ năng, dự án tiêu biểu, định hướng AI trong thương mại điện tử và các kênh liên hệ trên một giao diện tập trung. Dự án phù hợp để trình bày với nhà tuyển dụng, giảng viên hoặc người xem GitHub muốn hiểu nhanh về định hướng kỹ thuật và cách triển khai giao diện. Phiên bản hiện tại được triển khai bằng React + Vite + TypeScript và build ra static site để dễ chạy local cũng như dễ deploy lên shared hosting.
 
-> Thời gian cập nhật/push gần nhất trong README này: **2026-03-25 18:16:35 +07:00**
+> Thời gian cập nhật/push gần nhất trong README này: **2026-03-25 18:19:08 +07:00**
 
 ## Mục lục
 
