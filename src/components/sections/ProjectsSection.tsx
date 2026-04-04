@@ -25,7 +25,7 @@ export function ProjectsSection() {
         <PixelSectionTitle
           label="Archive // Featured Work"
           title="Dự án tiêu biểu"
-          description="Phần project được pixel hóa mạnh ở panel, badge và button, nhưng phần mô tả và nhịp đọc vẫn giữ phong cách portfolio hiện đại."
+          description="Một số project mình đã tự học, tự làm và hoàn thiện ở nhiều mức độ khác nhau, từ portfolio cá nhân đến tools và sản phẩm web."
         />
 
         <div className="grid gap-6 lg:grid-cols-2">

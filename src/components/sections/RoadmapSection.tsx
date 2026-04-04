@@ -13,7 +13,7 @@ export function RoadmapSection() {
         <PixelSectionTitle
           label="Mission // AI Commerce"
           title="Lộ trình AI cho thương mại điện tử"
-          description="Timeline chuyển từ kiểu corporate mảnh sang pixel timeline đậm hơn, với node vuông, badge thời gian và accordion mượt nhưng không rối."
+          description="Kế hoạch học tập và phát triển sản phẩm theo từng giai đoạn, tập trung vào việc ứng dụng AI vào bài toán thương mại điện tử."
         />
 
         <PixelTimeline groups={roadmap} />

@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import {
+  FaDiscord,
   FaEnvelope,
   FaFacebook,
   FaFacebookMessenger,
@@ -7,7 +8,6 @@ import {
   FaQrcode,
   FaTelegram,
   FaTiktok,
-  FaYoutube
 } from 'react-icons/fa6';
 
 export type SocialIconKey =
@@ -17,7 +17,7 @@ export type SocialIconKey =
   | 'tiktok'
   | 'telegram'
   | 'mail'
-  | 'youtube'
+  | 'discord'
   | 'zalo';
 
 export function getSocialIcon(icon: SocialIconKey): ReactNode {
@@ -36,8 +36,8 @@ export function getSocialIcon(icon: SocialIconKey): ReactNode {
       return <FaTelegram {...iconProps} />;
     case 'mail':
       return <FaEnvelope {...iconProps} />;
-    case 'youtube':
-      return <FaYoutube {...iconProps} />;
+    case 'discord':
+      return <FaDiscord {...iconProps} />;
     case 'zalo':
       return <FaQrcode {...iconProps} />;
     default:

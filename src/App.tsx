@@ -6,7 +6,7 @@ import { footerData } from './data/site';
 import { GlowOrb } from './components/background/GlowOrb';
 import { GridBackground } from './components/background/GridBackground';
 import { ParticleBackground } from './components/background/ParticleBackground';
-import { MusicToggle } from './components/layout/MusicToggle';
+import { MusicPlayerPanel } from './components/layout/MusicPlayerPanel';
 import { TopNav } from './components/layout/TopNav';
 import { ZaloModal } from './components/layout/ZaloModal';
 import { CustomCursor } from './components/layout/CustomCursor';
@@ -18,11 +18,12 @@ import { HeroSection } from './components/sections/HeroSection';
 import { ProjectsSection } from './components/sections/ProjectsSection';
 import { RoadmapSection } from './components/sections/RoadmapSection';
 import { SkillsSection } from './components/sections/SkillsSection';
-import bgMusicFile from '../assets/music/music.mp3';
+import { musicTracks } from './data/music';
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
   const [isZaloOpen, setIsZaloOpen] = useState(false);
+  const [isAmbientLite, setIsAmbientLite] = useState(false);
 
   useEffect(() => {
     const sections = document.querySelectorAll<HTMLElement>('[data-section]');
@@ -48,35 +49,59 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const mediaQuery = window.matchMedia('(max-width: 767px), (prefers-reduced-motion: reduce)');
+    const syncAmbientMode = () => setIsAmbientLite(mediaQuery.matches);
+
+    syncAmbientMode();
+
+    const addListener = mediaQuery.addEventListener?.bind(mediaQuery);
+    const removeListener = mediaQuery.removeEventListener?.bind(mediaQuery);
+
+    if (addListener && removeListener) {
+      addListener('change', syncAmbientMode);
+      return () => removeListener('change', syncAmbientMode);
+    }
+
+    mediaQuery.addListener(syncAmbientMode);
+    return () => mediaQuery.removeListener(syncAmbientMode);
+  }, []);
+
   return (
     <div className="relative min-h-screen">
-      <GridBackground />
-      <ParticleBackground />
+      <GridBackground lite={isAmbientLite} />
+      <ParticleBackground lite={isAmbientLite} />
 
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         <GlowOrb
           top="8%"
           left="7%"
-          size={320}
+          size={isAmbientLite ? 240 : 320}
           tone="pink"
         />
-        <GlowOrb
-          top="22%"
-          right="6%"
-          size={280}
-          tone="violet"
-        />
+        {isAmbientLite ? null : (
+          <GlowOrb
+            top="22%"
+            right="6%"
+            size={280}
+            tone="violet"
+          />
+        )}
         <GlowOrb
           top="68%"
           left="42%"
-          size={360}
+          size={isAmbientLite ? 240 : 360}
           tone="pink"
         />
       </div>
 
       <TopNav activeSection={activeSection} />
-      <CustomCursor />
-      <MusicToggle src={bgMusicFile} />
+      {isAmbientLite ? null : <CustomCursor />}
+      <MusicPlayerPanel tracks={musicTracks} />
 
       <main className="relative z-10 pb-16 pt-28 sm:pt-32">
         <HeroSection avatarSrc={avatarImage} />

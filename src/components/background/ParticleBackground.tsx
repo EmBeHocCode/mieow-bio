@@ -17,15 +17,21 @@ const particles = [
   { left: '88%', top: '86%', size: 4, duration: 16, delay: 1.1, drift: -18 }
 ];
 
-export function ParticleBackground() {
+type ParticleBackgroundProps = {
+  lite?: boolean;
+};
+
+export function ParticleBackground({ lite = false }: ParticleBackgroundProps) {
   const shouldReduceMotion = useReducedMotion();
+  const shouldAnimate = !lite && !shouldReduceMotion;
+  const visibleParticles = lite ? particles.slice(0, 6) : particles;
 
   return (
     <div
       aria-hidden
       className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
     >
-      {particles.map((particle, index) => (
+      {visibleParticles.map((particle, index) => (
         <motion.span
           key={`${particle.left}-${index}`}
           className="absolute rounded-full bg-[var(--accent-primary)]"
@@ -35,27 +41,29 @@ export function ParticleBackground() {
             width: particle.size,
             height: particle.size,
             boxShadow:
-              '0 0 12px rgba(255, 92, 214, 0.55), 0 0 26px rgba(138, 92, 255, 0.32)'
+              lite
+                ? '0 0 8px rgba(255, 92, 214, 0.26), 0 0 14px rgba(138, 92, 255, 0.18)'
+                : '0 0 12px rgba(255, 92, 214, 0.55), 0 0 26px rgba(138, 92, 255, 0.32)'
           }}
           animate={
-            shouldReduceMotion
-              ? undefined
-              : {
+            shouldAnimate
+              ? {
                   y: [0, -140],
                   x: [0, particle.drift],
                   opacity: [0, 0.85, 0],
                   scale: [0.85, 1.15, 1]
                 }
+              : undefined
           }
           transition={
-            shouldReduceMotion
-              ? undefined
-              : {
+            shouldAnimate
+              ? {
                   duration: particle.duration * SPEED_MULTIPLIER,
                   delay: particle.delay,
                   ease: 'easeInOut',
                   repeat: Number.POSITIVE_INFINITY
                 }
+              : undefined
           }
         />
       ))}

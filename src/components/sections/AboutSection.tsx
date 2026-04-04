@@ -18,7 +18,7 @@ export function AboutSection() {
         <PixelSectionTitle
           label="Profile // About"
           title="Về tôi"
-          description="Giữ nguyên tinh thần chân thật của website gốc, nhưng chuyển khung nội dung sang pixel panel sắc nét và dễ scan hơn."
+          description="Một vài thông tin ngắn gọn về định hướng học tập, cách mình làm việc và lý do mình theo đuổi web, e-commerce và AI tools."
         />
 
         <div className="grid gap-6 lg:grid-cols-[1.35fr_0.85fr]">

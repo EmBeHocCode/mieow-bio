@@ -52,6 +52,11 @@ export function HeroSection({ avatarSrc }: HeroSectionProps) {
                 <img
                   src={avatarSrc}
                   alt="EmBeby avatar"
+                  width={128}
+                  height={128}
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
                   className="block h-full w-full rounded-full object-cover object-center"
                 />
               </div>

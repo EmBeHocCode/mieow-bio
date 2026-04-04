@@ -22,7 +22,7 @@ export function SkillsSection() {
         <PixelSectionTitle
           label="Toolkit // Skills"
           title="Kỹ năng"
-          description="Ba mảng mình đang theo đuổi vẫn được giữ nguyên, nhưng chuyển thành pixel cards có icon, tag và hover state sắc nét hơn."
+          description="Những mảng mình đang học và thực hành nhiều nhất hiện tại, tập trung vào code, e-commerce và quy trình làm nội dung."
         />
 
         <div className="grid gap-6 lg:grid-cols-3">

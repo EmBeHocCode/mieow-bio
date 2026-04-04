@@ -16,8 +16,8 @@ function canUseCustomCursor() {
 
 export function CustomCursor() {
   const [enabled, setEnabled] = useState(false);
-  const dotRef = useRef<HTMLDivElement | null>(null);
-  const ringRef = useRef<HTMLDivElement | null>(null);
+  const primaryRef = useRef<HTMLDivElement | null>(null);
+  const secondaryRef = useRef<HTMLDivElement | null>(null);
   const fxLayerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -35,11 +35,11 @@ export function CustomCursor() {
       return;
     }
 
-    const dot = dotRef.current;
-    const ring = ringRef.current;
+    const primary = primaryRef.current;
+    const secondary = secondaryRef.current;
     const fxLayer = fxLayerRef.current;
 
-    if (!dot || !ring || !fxLayer) {
+    if (!primary || !secondary || !fxLayer) {
       return;
     }
 
@@ -52,17 +52,17 @@ export function CustomCursor() {
     let rafId = 0;
     let lastTrailTime = 0;
 
-    dot.style.left = `${mouseX}px`;
-    dot.style.top = `${mouseY}px`;
-    ring.style.left = `${ringX}px`;
-    ring.style.top = `${ringY}px`;
+    primary.style.left = `${mouseX}px`;
+    primary.style.top = `${mouseY}px`;
+    secondary.style.left = `${ringX}px`;
+    secondary.style.top = `${ringY}px`;
 
     const animateRing = () => {
       ringX += (mouseX - ringX) * 0.16;
       ringY += (mouseY - ringY) * 0.16;
 
-      ring.style.left = `${ringX}px`;
-      ring.style.top = `${ringY}px`;
+      secondary.style.left = `${ringX}px`;
+      secondary.style.top = `${ringY}px`;
 
       rafId = window.requestAnimationFrame(animateRing);
     };
@@ -91,14 +91,18 @@ export function CustomCursor() {
       mouseX = event.clientX;
       mouseY = event.clientY;
 
-      dot.style.left = `${mouseX}px`;
-      dot.style.top = `${mouseY}px`;
+      primary.style.left = `${mouseX}px`;
+      primary.style.top = `${mouseY}px`;
       createTrail(mouseX, mouseY);
     };
 
     const handlePointerDown = (event: MouseEvent) => {
-      dot.classList.add('clicking');
-      window.setTimeout(() => dot.classList.remove('clicking'), 220);
+      primary.classList.add('clicking');
+      secondary.classList.add('clicking');
+      window.setTimeout(() => {
+        primary.classList.remove('clicking');
+        secondary.classList.remove('clicking');
+      }, 220);
       createFxNode('cursor-click-effect', event.clientX, event.clientY, 560);
     };
 
@@ -153,8 +157,8 @@ export function CustomCursor() {
       className="pointer-events-none fixed inset-0 z-[120]"
     >
       <div ref={fxLayerRef} className="absolute inset-0" />
-      <div ref={ringRef} className="custom-cursor-ring" />
-      <div ref={dotRef} className="custom-cursor-dot" />
+      <div ref={secondaryRef} className="custom-cursor-secondary" />
+      <div ref={primaryRef} className="custom-cursor-primary" />
     </div>
   );
 }

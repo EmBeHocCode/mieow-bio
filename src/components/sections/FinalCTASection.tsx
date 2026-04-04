@@ -29,7 +29,7 @@ export function FinalCTASection({ onOpenZalo }: FinalCTASectionProps) {
             </h2>
 
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[var(--text-secondary)] sm:text-base">
-              Liên hệ mình qua các phương thức bên dưới. Mình giữ phần CTA thật nổi bật bằng border neon pixel, nhưng phần text và spacing vẫn hiện đại để không bị game hóa quá tay.
+              Nếu bạn đang tìm một người có thể cùng học, cùng làm và triển khai project nghiêm túc từng bước, mình sẵn sàng trao đổi.
             </p>
 
             <div className="mt-8 flex flex-wrap justify-center gap-3">

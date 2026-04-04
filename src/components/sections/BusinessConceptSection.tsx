@@ -15,7 +15,7 @@ export function BusinessConceptSection() {
         <PixelSectionTitle
           label="Concept // Quiet Zone"
           title={businessConcept.title}
-          description="Section này được giữ ngắn và yên hơn để tạo điểm nghỉ thị giác trước khi sang phần liên hệ."
+          description="Ý tưởng sản phẩm mình đang muốn theo đuổi lâu dài: dùng AI để hỗ trợ doanh nghiệp nhỏ phân tích và ra quyết định rõ ràng hơn."
         />
 
         <motion.div

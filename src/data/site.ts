@@ -46,7 +46,7 @@ export type SocialItem = {
     | 'tiktok'
     | 'telegram'
     | 'mail'
-    | 'youtube'
+    | 'discord'
     | 'zalo';
   label: string;
   description: string;
@@ -317,10 +317,10 @@ export const socials: SocialItem[] = [
     href: 'https://tiktok.com/@00bidev00'
   },
   {
-    icon: 'youtube',
-    label: 'YouTube',
-    description: 'Xem thêm các video và nội dung dài hơn.',
-    href: 'https://www.youtube.com/@mieowdeveloper05'
+    icon: 'discord',
+    label: 'Discord',
+    description: 'Trao đổi nhanh trên Discord. Username: embi_dev.',
+    href: 'https://discord.com/app'
   },
   {
     icon: 'zalo',

@@ -18,7 +18,7 @@ export function ConnectSection({ onOpenZalo }: ConnectSectionProps) {
         <PixelSectionTitle
           label="Channels // Connect"
           title="Kết nối"
-          description="Social buttons được làm lại thành panel pixel chắc tay, hover rõ, icon gọn và vẫn giữ độ dễ đọc như một portfolio thật."
+          description="Nếu bạn muốn trao đổi về project, hợp tác hoặc đơn giản là kết nối, mình có mặt ở các kênh bên dưới."
         />
 
         <div className="grid gap-4 lg:grid-cols-2">
