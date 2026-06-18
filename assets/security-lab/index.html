@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Security Lab Simulation</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="./security-lab.css?v=dark8">
+  <link rel="stylesheet" href="./security-lab.css?v=dark9">
 </head>
 <body>
   <section id="socket-demo" class="security-lab-shell">
@@ -21,7 +21,7 @@
 
         <div class="server-viz__hud server-viz__hud--tl">
           <div class="hud-title"><i class="fas fa-server"></i> Server Status: <span id="serverStatus" class="status-online">Online</span></div>
-          <div class="hud-row"><i class="fas fa-users"></i> Clients: <strong id="clientCount">10</strong></div>
+          <div class="hud-row"><i class="fas fa-users"></i> Clients: <strong id="clientCount">0</strong></div>
           <div class="hud-row"><i class="fas fa-skull-crossbones"></i> Threats: <strong id="attackerCount" style="color:#ef4444">0</strong></div>
           <div class="hud-row"><i class="fas fa-exchange-alt"></i> Packets/s: <strong id="packetRate">0</strong></div>
           <div class="hud-row"><i class="fas fa-shield-alt" style="color:#ef4444"></i> Blocked/s: <strong id="fwBlockedRate" style="color:#ef4444">0</strong></div>
@@ -73,6 +73,6 @@
     </div>
   </section>
 
-  <script src="./security-lab.js?v=perf1"></script>
+  <script src="./security-lab.js?v=perf2"></script>
 </body>
 </html>

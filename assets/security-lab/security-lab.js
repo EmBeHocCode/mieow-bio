@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Clients
     let clients = [];
-    for (let i = 0, total = isLiteMode() ? 7 : 10; i < total; i++) addClient(false);
+    updateStats();
 
     function addClient(isAttacker) {
         if (clients.length >= getMaxClients()) return;

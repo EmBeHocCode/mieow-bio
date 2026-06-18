@@ -114,10 +114,10 @@ assets/
 Nếu host/CDN cache mạnh, kiểm tra version query trong `index.html`, ví dụ:
 
 ```text
-css/style.css?v=security-dark8
-js/script.js?v=security-dark8
-assets/security-lab/index.html?v=dark8
-assets/security-lab/security-lab.js?v=perf1
+css/style.css?v=security-dark9
+js/script.js?v=security-dark9
+assets/security-lab/index.html?v=dark9
+assets/security-lab/security-lab.js?v=perf2
 ```
 
 ## Ghi chú asset

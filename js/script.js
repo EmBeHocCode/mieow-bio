@@ -2002,22 +2002,8 @@ function initCollapsibleSections() {
         document.querySelectorAll('.collapsible-section').forEach((section) => syncSectionBodyHeight(section));
     }, { passive: true });
 
-    openCurrentHashSection(80);
-    window.addEventListener('hashchange', () => openCurrentHashSection(40), { passive: true });
 }
 
-function openCurrentHashSection(delay = 0) {
-    const sectionId = decodeURIComponent(window.location.hash.replace(/^#/u, ''));
-    if (!sectionId) return;
-
-    window.setTimeout(() => {
-        const target = document.getElementById(sectionId);
-        if (!target) return;
-
-        expandSectionById(sectionId);
-        window.requestAnimationFrame(() => smoothScrollTo('#' + sectionId, 420));
-    }, delay);
-}
 
 function initLazySections() {
     const lazySections = Array.from(document.querySelectorAll('.content-wrapper .section')).slice(2);
@@ -2173,7 +2159,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     initSceneControlDock();
-    openCurrentHashSection(180);
 });
 
-window.addEventListener('load', () => openCurrentHashSection(120), { once: true });
