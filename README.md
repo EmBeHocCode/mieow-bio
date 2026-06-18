@@ -1,194 +1,137 @@
 # Mieow Bio
 
-Portfolio website cá nhân được xây dựng bằng `React + Vite + TypeScript`, tập trung thể hiện năng lực triển khai frontend, tổ chức nội dung portfolio, và tư duy thiết kế giao diện có bản sắc riêng. Dự án được định hướng như một sản phẩm trình bày hồ sơ chuyên nghiệp dành cho **nhà tuyển dụng**, **giảng viên**, và **người xem GitHub** muốn đánh giá cả chất lượng giao diện lẫn cấu trúc kỹ thuật phía sau.
+Portfolio cá nhân của **Meow Ngáo / EmBeHocCode**, sinh viên CNTT định hướng **E-Commerce**, xây theo phong cách **cyber pink/purple glassmorphism**. Website dùng để trình bày profile, kỹ năng, project đang làm, kênh liên hệ và một mô phỏng client-side về kiến trúc bảo vệ server.
 
-## Demo
+Live site: [https://bio.mieowparadise.io.vn](https://bio.mieowparadise.io.vn)
 
-- Live site: [https://bio.mieowparadise.io.vn](https://bio.mieowparadise.io.vn)
-- Repository: [https://github.com/EmBeHocCode/mieow-bio](https://github.com/EmBeHocCode/mieow-bio)
+## Điểm nổi bật
 
-## Mục tiêu dự án
+- One-page portfolio dạng static site, có sidebar profile cố định trên desktop.
+- Responsive cho desktop, tablet và mobile.
+- Theme cyber pink/purple glassmorphism, có dark/light toggle và accent theme manager.
+- Nội dung song ngữ VI/EN qua `data-vi` và `data-en`.
+- Skill section dùng level mô tả thay vì phần trăm tự chấm.
+- Project cards có `Role`, `Stack`, `Status`, link GitHub/Demo rõ ràng.
+- Security Lab iframe: mô phỏng kiến trúc bảo vệ server, traffic bất thường theo OSI, WAF/rate limiter/IDS/DDoS shield.
+- WebGL/Three.js background tách riêng trong `assets/site3d-bg`.
+- Music panel local playlist, cursor theme, back-to-top, loading intro ngắn.
 
-Mục tiêu của dự án không chỉ là tạo một trang bio đơn giản, mà là xây dựng một **portfolio có giá trị trình bày học thuật và tuyển dụng**, trong đó:
+## Dự án đang hiển thị
 
-- thông tin cá nhân, kỹ năng, dự án, roadmap và kênh liên hệ được gom về một điểm truy cập duy nhất
-- giao diện có phong cách riêng, dễ nhận diện, thay vì dùng template phổ thông
-- mã nguồn được tổ chức theo hướng component-based, đủ rõ để người đọc repo có thể đánh giá khả năng triển khai thực tế
-- website có thể build thành static site và triển khai trên shared hosting, phù hợp với điều kiện vận hành thực tế
+- `mieow-bio`: portfolio chính.
+- `SnapTrans`: desktop OCR/translation tool.
+- `ZenoDigital`: storefront/backoffice hướng commerce system.
+- `Mona Idle Quest`: prototype game 2D pixel-art action RPG/idle RPG bằng Python/Pygame.
+- `E-Commerce Workflow Notes`: ghi chú và flow phân tích yêu cầu E-Commerce.
+- `Meow Astral Core`: WebGL/Three.js visual background.
 
-## Giá trị trình bày
+## Security Lab
 
-Website này được thiết kế để trả lời nhanh 4 câu hỏi mà nhà tuyển dụng hoặc giảng viên thường quan tâm:
+Phần **Mô Phỏng Kiến Trúc Bảo Vệ Server** nằm trong:
 
-1. Tác giả đang theo đuổi định hướng kỹ thuật nào?
-2. Khả năng tổ chức giao diện và trải nghiệm người dùng ra sao?
-3. Mức độ làm thật của sản phẩm tới đâu?
-4. Codebase có được tổ chức đủ rõ ràng để phát triển tiếp hay không?
+```text
+assets/security-lab/
+```
 
-## Điểm nổi bật kỹ thuật
+Mô phỏng được nhúng bằng iframe để tránh xung đột CSS/JS với portfolio chính.
 
-- Kiến trúc frontend hiện đại với `React 19`, `Vite`, `TypeScript`
-- Giao diện theo phong cách `pixel / neon / cyber hybrid`, có định danh hình ảnh rõ
-- Dữ liệu hiển thị được tách khỏi phần render qua các file `src/data/*`
-- Hệ section được chia rõ theo vai trò: hero, about, skills, projects, roadmap, connect
-- Tích hợp `music player` với `Web Audio API`, `AnalyserNode` và `canvas visualizer` tùy biến
-- Visualizer được xây theo hướng giống Avee/YouTube spectrum: có baseline cong, peak accent, bass emphasis, record center
-- Có tối ưu cho static hosting: build ra `dist/`, dùng base path tương thích, không phụ thuộc backend
-- Có tinh chỉnh hiệu năng cho hero section, background effect và audio panel để hạn chế lag trên thiết bị yếu
+Tối ưu hiệu năng đã áp dụng:
 
-## Chức năng chính
+- Lazy load iframe.
+- Pause canvas khi section bị collapse, tab bị ẩn hoặc iframe ra ngoài viewport.
+- Giới hạn FPS: desktop khoảng 45 FPS, mobile/coarse/reduced motion khoảng 24 FPS.
+- Giảm DPR canvas, particle, trail, packet spawn và số client trên thiết bị yếu.
+- Giữ nền dark glass để không lệch màu với portfolio.
 
-- Portfolio landing page dạng one-page
-- Hiển thị hồ sơ cá nhân, kỹ năng và định hướng phát triển
-- Danh sách dự án tiêu biểu với stack và liên kết tham khảo
-- Roadmap học tập / phát triển nghề nghiệp theo từng giai đoạn
-- Hệ social/contact tập trung
-- Music control panel với:
-  - local playlist
-  - play / pause / next / previous
-  - shuffle / repeat
-  - volume control
-  - audio visualizer phong cách spectrum cong hai bên
-- Hiệu ứng nền gồm grid, particle, glow và cursor tùy biến
+## Cấu trúc chính
 
-## Kiến trúc triển khai
-
-Codebase hiện tại đi theo hướng **component-driven UI** kết hợp với **data-driven content rendering**.
-
-### 1. Tầng nội dung
-
-- `src/data/site.ts`
-- `src/data/music.ts`
-
-Các file này chịu trách nhiệm quản lý dữ liệu hiển thị như hero content, skills, projects, roadmap, social links và metadata playlist. Cách tách này giúp phần giao diện có thể tái sử dụng và dễ cập nhật hơn.
-
-### 2. Tầng giao diện
-
-- `src/components/sections`: các section nội dung chính
-- `src/components/layout`: music player, visualizer, navbar, custom cursor, icon system
-- `src/components/background`: grid, particle và ambient effects
-- `src/components/pixel`: các UI primitives theo phong cách thiết kế pixel-hybrid
-
-### 3. Tầng render và hiệu ứng
-
-- `Framer Motion` cho các transition UI
-- `Canvas 2D + Web Audio API` cho audio spectrum
-- CSS custom properties và Tailwind utility cho theme/panel/layout system
+```text
+.
+├─ index.html
+├─ css/
+│  └─ style.css
+├─ js/
+│  └─ script.js
+├─ assets/
+│  ├─ favicon.ico
+│  ├─ avatar.gif
+│  ├─ tichtuyetavt.png
+│  ├─ tichtuyetavt.webp
+│  ├─ mouse-cursor/
+│  ├─ security-lab/
+│  │  ├─ index.html
+│  │  ├─ security-lab.css
+│  │  └─ security-lab.js
+│  └─ site3d-bg/
+│     ├─ index.html
+│     └─ assets/
+└─ .htaccess
+```
 
 ## Tech Stack
 
 | Nhóm | Công nghệ |
 |---|---|
-| Frontend | React 19, TypeScript |
-| Build tool | Vite |
-| Styling | Tailwind CSS, CSS custom properties |
-| Motion | Framer Motion |
-| Icons | Lucide React, React Icons |
-| Audio visualization | Web Audio API, Canvas 2D |
-| Deployment target | Static hosting / shared hosting |
+| Core | HTML, CSS, JavaScript |
+| UI | Glassmorphism, responsive CSS, CSS custom properties |
+| Icons | Font Awesome CDN |
+| Background | Three.js/WebGL bundle trong `assets/site3d-bg` |
+| Simulation | Canvas 2D trong `assets/security-lab` |
+| Hosting | Static hosting/shared hosting |
 
-## Cấu trúc thư mục
+## Chạy local
+
+Không cần build step cho portfolio chính.
+
+```bash
+python -m http.server 4181
+```
+
+Sau đó mở:
 
 ```text
-public_html/
-├─ assets/                      # Ảnh, icon, audio asset
-├─ src/
-│  ├─ components/
-│  │  ├─ background/            # Hiệu ứng nền
-│  │  ├─ layout/                # Navbar, player, visualizer, cursor
-│  │  ├─ pixel/                 # Reusable UI components
-│  │  └─ sections/              # Nội dung từng section
-│  ├─ data/                     # Nội dung hiển thị và playlist
-│  ├─ App.tsx
-│  ├─ index.css
-│  └─ main.tsx
-├─ index.html
-├─ package.json
-├─ vite.config.ts
-└─ README.md
+http://127.0.0.1:4181
 ```
 
-## Năng lực thể hiện qua dự án
+Test nhanh Security Lab:
 
-Đây là phần có giá trị nhất nếu repo được xem bởi nhà tuyển dụng hoặc giảng viên:
-
-- Khả năng chuyển một ý tưởng giao diện có cá tính thành sản phẩm chạy được
-- Khả năng tổ chức source code rõ vai trò thay vì dồn logic vào một file lớn
-- Khả năng làm việc với `animation`, `responsive layout`, `canvas rendering`, `audio-reactive UI`
-- Khả năng cân bằng giữa thẩm mỹ giao diện và giới hạn hiệu năng khi deploy thật
-- Khả năng thiết kế một portfolio có định hướng nghề nghiệp rõ ràng, không chỉ là landing page trang trí
-
-## Hướng dẫn chạy local
-
-### Yêu cầu
-
-- Node.js
-- npm
-
-### Cài dependency
-
-```bash
-npm install
+```text
+http://127.0.0.1:4181/#security-lab
 ```
 
-### Chạy môi trường phát triển
+## Deploy
 
-```bash
-npm run dev
+Upload các file/folder sau lên host static:
+
+```text
+index.html
+.htaccess
+css/
+js/
+assets/
 ```
 
-### Build production
+Nếu host/CDN cache mạnh, kiểm tra version query trong `index.html`, ví dụ:
 
-```bash
-npm run build
+```text
+css/style.css?v=security-dark8
+js/script.js?v=security-dark8
+assets/security-lab/index.html?v=dark8
+assets/security-lab/security-lab.js?v=perf1
 ```
 
-### Preview bản build
+## Ghi chú asset
 
-```bash
-npm run preview
+Music panel đọc file từ:
+
+```text
+assets/music/
 ```
 
-## Hướng dẫn deploy
-
-Dự án build ra static site, vì vậy quy trình deploy khá gọn:
-
-1. Chạy `npm run build`
-2. Mở thư mục `dist/`
-3. Upload toàn bộ nội dung trong `dist/` lên thư mục host, ví dụ `public_html/`
-
-Lưu ý: không upload nguyên `src/` nếu host chỉ là static hosting.
-
-## Ghi chú về hiệu năng
-
-Trong phiên bản hiện tại, dự án đã có một số tinh chỉnh để phù hợp với việc chạy trên hosting phổ thông:
-
-- trì hoãn tải audio cho tới khi người dùng thực sự bật nhạc
-- giảm chi phí render của visualizer ở trạng thái idle / paused / transition
-- tối ưu bớt background effect cho màn nhỏ hoặc môi trường hạn chế hiệu năng
-- giữ mô hình static build để giảm phụ thuộc hạ tầng
-
-## Hướng phát triển tiếp theo
-
-- bổ sung screenshot chính thức trong README
-- chuẩn hóa thêm metadata SEO / Open Graph
-- tách rõ hơn phần legacy static cũ nếu tiếp tục duy trì repo lâu dài
-- hoàn thiện thêm testing và quality checks cho frontend
-- tiếp tục tối ưu visualizer và trải nghiệm player theo hướng production-ready
+Playlist có thể bổ sung sau bằng các file `.mp3` đúng tên trong `js/script.js`. Repo hiện tập trung vào source portfolio và visual assets chính, không bắt buộc kèm toàn bộ nhạc.
 
 ## Tác giả
 
-- Họ tên: **Nguyễn Lâm Hùng**
-- Vai trò: **Tác giả dự án / người phát triển chính**
 - GitHub: [EmBeHocCode](https://github.com/EmBeHocCode)
-- Email: [mieowshopsite@gmail.com](mailto:mieowshopsite@gmail.com)
-
-## Ghi chú sử dụng
-
-Repository này được công khai chủ yếu nhằm mục đích:
-
-- trình bày năng lực cá nhân
-- lưu trữ mã nguồn portfolio
-- phục vụ tham khảo học thuật và đánh giá kỹ thuật
-
-Nếu cần tái sử dụng source cho mục đích khác, nên trao đổi rõ với tác giả hoặc bổ sung license phù hợp cho repo.
+- Live bio: [bio.mieowparadise.io.vn](https://bio.mieowparadise.io.vn)
+- Định hướng: IT student, E-Commerce, web product, AI-assisted building.
